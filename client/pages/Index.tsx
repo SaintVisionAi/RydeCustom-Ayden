@@ -194,12 +194,12 @@ export default function Index() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { name: "Pro Carbon Handlebars", price: "$159.99" },
-                { name: "LED Performance Lights", price: "$89.99" },
-                { name: "Custom Paint Job", price: "$299.99" },
-                { name: "Titanium Pedals", price: "$129.99" },
-                { name: "Professional Brakes", price: "$199.99" },
-                { name: "Custom Wheel Stickers", price: "$24.99" },
+                { name: "Pro Carbon Handlebars", price: "$79.99" },
+                { name: "LED Performance Lights", price: "$39.99" },
+                { name: "Custom Paint Job", price: "$149.99" },
+                { name: "Titanium Pedals", price: "$59.99" },
+                { name: "Professional Brakes", price: "$99.99" },
+                { name: "Custom Wheel Stickers", price: "$9.99" },
               ].map((product, index) => (
                 <div
                   key={index}
