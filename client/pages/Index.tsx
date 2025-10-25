@@ -203,7 +203,7 @@ export default function Index() {
               ].map((product, index) => (
                 <div
                   key={index}
-                  className="group p-6 bg-white rounded-xl border border-border hover:border-primary transition-all hover:shadow-lg hover:shadow-primary/10 cursor-pointer"
+                  className="group p-6 bg-white rounded-xl border border-border hover:border-primary transition-all hover:shadow-lg hover:shadow-primary/10"
                 >
                   <div className="aspect-square bg-gradient-to-br from-slate-100 to-slate-50 rounded-lg mb-4 flex items-center justify-center group-hover:from-primary/5 group-hover:to-secondary/5 transition-colors">
                     <div className="text-slate-300 group-hover:text-primary/20 transition-colors">
@@ -215,7 +215,13 @@ export default function Index() {
                   </h3>
                   <div className="flex items-center justify-between">
                     <span className="text-2xl font-bold text-primary">{product.price}</span>
-                    <button className="btn-secondary py-2 px-4">Add</button>
+                    {product.name === "Custom Wheel Stickers" ? (
+                      <a href="/customize-sticker" className="btn-secondary py-2 px-4">
+                        Design
+                      </a>
+                    ) : (
+                      <button className="btn-secondary py-2 px-4">Add</button>
+                    )}
                   </div>
                 </div>
               ))}
