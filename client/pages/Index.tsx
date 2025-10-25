@@ -196,7 +196,7 @@ export default function Index() {
               {[
                 { name: "Pro Carbon Handlebars", price: "$79.99" },
                 { name: "LED Performance Lights", price: "$39.99" },
-                { name: "Custom Paint Job", price: "$149.99" },
+                { name: "Full Titanium Kit", price: "$149.99" },
                 { name: "Titanium Pedals", price: "$59.99" },
                 { name: "Professional Brakes", price: "$99.99" },
                 { name: "Custom Wheel Stickers", price: "$9.99" },
