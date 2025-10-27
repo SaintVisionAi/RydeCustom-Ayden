@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { ArrowLeft, Copy, Download, ShoppingCart } from "lucide-react";
+import { ArrowLeft, Copy, Download, ShoppingCart, MessageSquare } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AIChat from "@/components/AIChat";
 
 export default function StickerCustomizer() {
   const [text, setText] = useState("EMOTO");
