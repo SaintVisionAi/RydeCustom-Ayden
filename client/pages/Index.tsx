@@ -253,14 +253,10 @@ export default function Index() {
           </div>
         </section>
 
-        <section id="cta" className="w-full py-16 md:py-24 bg-gradient-to-r from-primary to-secondary relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0 bg-pattern" />
-          </div>
-
-          <div className="container-section relative z-10 text-center">
-            <h2 className="text-white mb-6">Ready to Upgrade Your Ride?</h2>
-            <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
+        <section id="cta" className="w-full py-16 md:py-24 bg-slate-50 border-t-2 border-primary/20">
+          <div className="container-section text-center">
+            <h2 className="mb-6" style={{ fontWeight: '300' }}>Ready to Upgrade Your Ride?</h2>
+            <p className="text-2xl text-muted-foreground max-w-3xl mx-auto mb-8" style={{ fontWeight: '300' }}>
               RYDE CUSTOM's premium electric bike upgrades are built for speed, style, and personal
               flair. Join thousands of riders who have transformed their bikes with our
               premium custom parts.
@@ -268,13 +264,13 @@ export default function Index() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/shop"
-                className="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-colors inline-flex items-center justify-center gap-2"
+                className="btn-primary px-8 py-4 text-lg font-bold inline-flex items-center justify-center gap-2"
               >
                 Shop All Products <ArrowRight className="w-5 h-5" />
               </a>
               <a
                 href="/design"
-                className="bg-white/20 text-white hover:bg-white/30 px-8 py-4 rounded-lg font-bold text-lg transition-colors inline-flex items-center justify-center gap-2 border border-white"
+                className="btn-outline border-primary text-primary px-8 py-4 text-lg font-bold inline-flex items-center justify-center gap-2"
               >
                 Design Your Own <ArrowRight className="w-5 h-5" />
               </a>
