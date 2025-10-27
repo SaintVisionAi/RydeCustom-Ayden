@@ -1,4 +1,4 @@
-import { ShoppingCart, ArrowRight, Truck, Lock, RotateCcw } from "lucide-react";
+import { ShoppingCart, ArrowRight, Truck, Lock, RotateCcw, Star, Zap } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -31,14 +31,67 @@ const GUARANTEES: Guarantee[] = [
 function GuaranteeCard({ guarantee }: { guarantee: Guarantee }) {
   const Icon = guarantee.icon;
   return (
-    <div className="text-center">
+    <div className="group p-8 bg-white rounded-xl border-2 border-border hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/20">
       <div className="flex justify-center mb-4">
-        <div className="p-3 rounded-lg bg-primary/10">
+        <div className="p-4 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
           <Icon className="w-6 h-6 text-primary" />
         </div>
       </div>
-      <h3 className="font-bold text-lg mb-2">{guarantee.title}</h3>
-      <p className="text-muted-foreground">{guarantee.description}</p>
+      <h3 className="font-bold text-lg text-center text-foreground group-hover:text-primary transition-colors mb-2">
+        {guarantee.title}
+      </h3>
+      <p className="text-muted-foreground text-center text-sm">
+        {guarantee.description}
+      </p>
+    </div>
+  );
+}
+
+function FeaturedProductCard({ 
+  number, 
+  title, 
+  description 
+}: { 
+  number: number; 
+  title: string; 
+  description: string;
+}) {
+  return (
+    <div className="group overflow-hidden rounded-xl border-2 border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 bg-white">
+      <div className="relative aspect-square bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent group-hover:from-primary/10 transition-all" />
+        <div className="relative text-center">
+          <div className="text-5xl font-bold text-primary/20 group-hover:text-primary/40 transition-colors">
+            {number}
+          </div>
+          <p className="text-slate-400 text-sm font-semibold group-hover:text-primary/50 transition-colors">
+            Featured Product
+          </p>
+        </div>
+      </div>
+      <div className="p-6">
+        <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
+          {title}
+        </h3>
+        <p className="text-sm text-muted-foreground mb-4">
+          {description}
+        </p>
+        <div className="flex items-center justify-between">
+          <div className="flex gap-1">
+            {Array(5)
+              .fill(null)
+              .map((_, i) => (
+                <Star
+                  key={i}
+                  className="w-4 h-4 fill-primary text-primary"
+                />
+              ))}
+          </div>
+          <button className="btn-primary py-2 px-4 text-sm font-bold hover:scale-105 transition-transform">
+            View
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
@@ -85,60 +138,48 @@ export default function Shop() {
         <section className="w-full py-12 md:py-16 bg-gradient-to-b from-background to-slate-50">
           <div className="container-section">
             <div className="mb-8">
-              <h2
-                className="text-4xl md:text-5xl font-light mb-4"
-                style={{ fontWeight: "300" }}
-              >
-                Featured Products
-              </h2>
-              <p
-                className="text-2xl text-muted-foreground mb-8"
-                style={{ fontWeight: "300" }}
-              >
-                Shopify product catalog integration will load here with live
-                inventory and pricing.
-              </p>
+              <div className="flex items-center justify-between mb-8">
+                <div>
+                  <h2
+                    className="text-4xl md:text-5xl font-light mb-4"
+                    style={{ fontWeight: "300" }}
+                  >
+                    Featured Products
+                  </h2>
+                  <p
+                    className="text-lg text-muted-foreground"
+                    style={{ fontWeight: "300" }}
+                  >
+                    Curated selection of premium custom bike parts
+                  </p>
+                </div>
+                <div className="hidden md:flex items-center gap-2 text-primary font-bold text-sm">
+                  <Zap className="w-4 h-4" />
+                  <span>SALE ON NOW</span>
+                </div>
+              </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[1, 2, 3].map((item) => (
-                  <div
+                  <FeaturedProductCard
                     key={item}
-                    className="group overflow-hidden rounded-xl border-2 border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 bg-white"
-                  >
-                    <div className="relative aspect-square bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center text-slate-400">
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent group-hover:from-primary/10 transition-all" />
-                      <span className="relative group-hover:text-primary/30 transition-colors">
-                        Product Image {item}
-                      </span>
-                    </div>
-                    <div className="p-6">
-                      <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
-                        Product Name {item}
-                      </h3>
-                      <p className="text-sm text-muted-foreground mb-4">
-                        Premium custom bike part with exceptional quality
-                      </p>
-                      <div className="flex items-center justify-between">
-                        <span className="text-2xl font-bold text-primary">
-                          $XX.XX
-                        </span>
-                        <button className="btn-primary py-2 px-4 text-sm font-bold hover:scale-105 transition-transform">
-                          Add
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+                    number={item}
+                    title={`Premium Product ${item}`}
+                    description="Custom bike part with exceptional quality and performance"
+                  />
                 ))}
               </div>
 
-              <div className="mt-10 p-8 bg-white rounded-xl border-2 border-primary/20 hover:border-primary/50 transition-all text-center">
-                <p className="text-muted-foreground mb-4 font-semibold">
-                  📌 Shopify Buy Button or Product Collection will be embedded
-                  here
+              <div className="mt-10 p-8 bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl border-2 border-primary/30 text-center">
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <Zap className="w-5 h-5 text-primary" />
+                  <p className="text-primary font-bold text-sm">
+                    SHOPIFY INTEGRATION
+                  </p>
+                </div>
+                <p className="text-muted-foreground">
+                  Live product catalog will be embedded here with real-time inventory and pricing
                 </p>
-                <code className="text-xs bg-slate-100 px-4 py-2 rounded-lg inline-block text-muted-foreground font-mono">
-                  {`<!-- Shopify Buy Button Code -->`}
-                </code>
               </div>
             </div>
           </div>
@@ -155,14 +196,14 @@ export default function Shop() {
 
             <div className="max-w-3xl mx-auto mb-12">
               <div className="space-y-6">
-                <div className="flex gap-4 p-6 rounded-lg bg-white border-2 border-border hover:border-primary/30 transition-all">
+                <div className="flex gap-4 p-6 rounded-lg bg-white border-2 border-border hover:border-primary/30 transition-all group">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary text-white font-bold text-lg">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary text-[#0f0f0f] font-bold text-lg group-hover:shadow-lg group-hover:shadow-primary/50 transition-all">
                       1
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg mb-2 text-foreground">
+                    <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
                       You Place an Order
                     </h3>
                     <p className="text-muted-foreground">
@@ -172,14 +213,14 @@ export default function Shop() {
                   </div>
                 </div>
 
-                <div className="flex gap-4 p-6 rounded-lg bg-white border-2 border-border hover:border-primary/30 transition-all">
+                <div className="flex gap-4 p-6 rounded-lg bg-white border-2 border-border hover:border-primary/30 transition-all group">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary text-white font-bold text-lg">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary text-[#0f0f0f] font-bold text-lg group-hover:shadow-lg group-hover:shadow-primary/50 transition-all">
                       2
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg mb-2 text-foreground">
+                    <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
                       Printify Prints Your Order
                     </h3>
                     <p className="text-muted-foreground">
@@ -190,14 +231,14 @@ export default function Shop() {
                   </div>
                 </div>
 
-                <div className="flex gap-4 p-6 rounded-lg bg-white border-2 border-border hover:border-primary/30 transition-all">
+                <div className="flex gap-4 p-6 rounded-lg bg-white border-2 border-border hover:border-primary/30 transition-all group">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary text-white font-bold text-lg">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary text-[#0f0f0f] font-bold text-lg group-hover:shadow-lg group-hover:shadow-primary/50 transition-all">
                       3
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg mb-2 text-foreground">
+                    <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
                       Quality Control & Shipping
                     </h3>
                     <p className="text-muted-foreground">
@@ -210,7 +251,12 @@ export default function Shop() {
               </div>
             </div>
 
-            <div className="bg-white border-2 border-primary/20 rounded-xl p-8 text-center mb-8 hover:border-primary/50 transition-all">
+            <div className="bg-white border-2 border-primary/20 rounded-xl p-8 text-center mb-8 hover:border-primary/50 transition-all group">
+              <div className="flex justify-center mb-3">
+                <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                  <Zap className="w-6 h-6 text-primary" />
+                </div>
+              </div>
               <p className="text-foreground font-semibold mb-2">
                 🏭 Powered by Printify
               </p>
@@ -234,22 +280,7 @@ export default function Shop() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {GUARANTEES.map((guarantee, index) => (
-                <div
-                  key={index}
-                  className="group p-8 bg-white rounded-xl border-2 border-border hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/20"
-                >
-                  <div className="flex justify-center mb-4">
-                    <div className="p-4 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                      <guarantee.icon className="w-6 h-6 text-primary" />
-                    </div>
-                  </div>
-                  <h3 className="font-bold text-lg text-center text-foreground group-hover:text-primary transition-colors mb-2">
-                    {guarantee.title}
-                  </h3>
-                  <p className="text-muted-foreground text-center text-sm">
-                    {guarantee.description}
-                  </p>
-                </div>
+                <GuaranteeCard key={index} guarantee={guarantee} />
               ))}
             </div>
           </div>
@@ -272,7 +303,7 @@ export default function Shop() {
               </p>
               <a
                 href="/design"
-                className="inline-flex items-center gap-2 btn-primary px-8 py-4 text-lg font-bold"
+                className="inline-flex items-center gap-2 btn-primary px-8 py-4 text-lg font-bold hover:scale-105 transition-transform"
               >
                 Start Designing <ArrowRight className="w-5 h-5" />
               </a>
@@ -289,21 +320,40 @@ export default function Shop() {
               >
                 Payment & Security
               </h2>
-              <div className="space-y-4 text-muted-foreground">
-                <p>
-                  💳 <span className="font-semibold">Shopify Payments</span> -
-                  Our primary checkout is powered by Shopify, supporting all
-                  major credit cards and payment methods.
-                </p>
-                <p>
-                  💰 <span className="font-semibold">Stripe Integration</span> -
-                  For advanced use cases, custom orders, and alternative payment
-                  flows, we also support Stripe.
-                </p>
-                <p>
-                  🔒 <span className="font-semibold">Secure & Encrypted</span> -
-                  All transactions are PCI DSS compliant and fully encrypted.
-                </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-muted-foreground">
+                <div className="p-6 bg-white rounded-lg border-2 border-border hover:border-primary/30 transition-all group">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                      <ShoppingCart className="w-5 h-5 text-primary" />
+                    </div>
+                    <span className="font-semibold">Shopify Payments</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Primary checkout powered by Shopify, supporting all major credit cards.
+                  </p>
+                </div>
+                <div className="p-6 bg-white rounded-lg border-2 border-border hover:border-primary/30 transition-all group">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                      <Lock className="w-5 h-5 text-primary" />
+                    </div>
+                    <span className="font-semibold">Secure & Encrypted</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    All transactions are PCI DSS compliant and fully encrypted.
+                  </p>
+                </div>
+                <div className="p-6 bg-white rounded-lg border-2 border-border hover:border-primary/30 transition-all group">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                      <Zap className="w-5 h-5 text-primary" />
+                    </div>
+                    <span className="font-semibold">Stripe Integration</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Advanced payment flows for custom orders and alternative methods.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
