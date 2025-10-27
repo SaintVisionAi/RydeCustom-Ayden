@@ -1,0 +1,211 @@
+import { ArrowRight, Heart, Zap, Globe } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
+interface Value {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  description: string;
+}
+
+const VALUES: Value[] = [
+  {
+    icon: Zap,
+    title: "Innovation First",
+    description:
+      "We blend cutting-edge AI with traditional craftsmanship to create unique, personalized products.",
+  },
+  {
+    icon: Heart,
+    title: "Quality Obsessed",
+    description:
+      "Every product is hand-checked for quality. We never compromise on excellence.",
+  },
+  {
+    icon: Globe,
+    title: "Sustainable",
+    description:
+      "Print-on-demand means zero waste inventory. We build for the planet, not against it.",
+  },
+];
+
+export default function About() {
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Header />
+
+      <main className="flex-1 w-full">
+        <section className="w-full bg-gradient-to-b from-slate-900 via-slate-800 to-background py-20 md:py-32 relative overflow-hidden">
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+          </div>
+
+          <div className="container-section relative z-10">
+            <div className="max-w-3xl">
+              <h1 className="text-white mb-6">About EMOTO</h1>
+              <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
+                We're building the future of custom electric bike parts—powered by AI, designed
+                for style, and built to last.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-16 md:py-24">
+          <div className="container-section">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Mission</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                At EMOTO, we believe that electric bikes are more than just transportation—they're
+                an expression of identity and individuality. We empower riders to customize and
+                personalize their bikes exactly the way they want them.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                With our AI-powered design tools and seamless integration with Printify and
+                Shopify, we make it effortless to create, customize, and order premium bike
+                parts—from glow kits to carbon fiber upgrades to custom license plates.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-16 md:py-24 bg-secondary/5 border-y border-border">
+          <div className="container-section">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Our Values</h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {VALUES.map((value, index) => {
+                const Icon = value.icon;
+                return (
+                  <div key={index} className="text-center">
+                    <div className="flex justify-center mb-4">
+                      <div className="p-3 rounded-lg bg-primary/10">
+                        <Icon className="w-6 h-6 text-primary" />
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-lg mb-3">{value.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {value.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-16 md:py-24">
+          <div className="container-section">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">The EMOTO Stack</h2>
+              <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
+                Behind every custom creation is a powerful technology stack designed to deliver
+                the best experience:
+              </p>
+
+              <div className="space-y-8">
+                <div className="p-6 bg-primary/5 rounded-lg border border-primary/20">
+                  <h3 className="font-bold text-lg mb-3">🛒 Shopify</h3>
+                  <p className="text-muted-foreground">
+                    Our e-commerce backbone. Shopify powers our product catalog, inventory
+                    management, and secure checkout experience.
+                  </p>
+                </div>
+
+                <div className="p-6 bg-secondary/5 rounded-lg border border-secondary/20">
+                  <h3 className="font-bold text-lg mb-3">🏭 Printify</h3>
+                  <p className="text-muted-foreground">
+                    Print-on-demand fulfillment partner. Printify handles production, quality
+                    assurance, and direct shipping—zero inventory waste.
+                  </p>
+                </div>
+
+                <div className="p-6 bg-primary/5 rounded-lg border border-primary/20">
+                  <h3 className="font-bold text-lg mb-3">🧠 Claude (Anthropic)</h3>
+                  <p className="text-muted-foreground">
+                    Our AI agent. EMOTO AI helps customers brainstorm designs, answer product
+                    questions, and recommend perfect upgrades for their bikes.
+                  </p>
+                </div>
+
+                <div className="p-6 bg-secondary/5 rounded-lg border border-secondary/20">
+                  <h3 className="font-bold text-lg mb-3">💳 Stripe</h3>
+                  <p className="text-muted-foreground">
+                    Advanced payment processing for specialized flows, coaching calls, and
+                    custom orders outside the standard Shopify checkout.
+                  </p>
+                </div>
+
+                <div className="p-6 bg-primary/5 rounded-lg border border-primary/20">
+                  <h3 className="font-bold text-lg mb-3">🎨 Builder.io</h3>
+                  <p className="text-muted-foreground">
+                    Frontend control and visual management of our website. Builder.io lets us
+                    rapidly iterate on design and content without redeploying.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-16 md:py-24 bg-secondary/5 border-y border-border">
+          <div className="container-section">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why EMOTO?</h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="font-bold text-lg mb-3">No Inventory Risk</h3>
+                  <p className="text-muted-foreground">
+                    Print-on-demand means we only produce what's ordered. Zero dead stock, zero
+                    waste.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="font-bold text-lg mb-3">Lightning-Fast Design</h3>
+                  <p className="text-muted-foreground">
+                    Our AI agent guides you through the design process in minutes, not days.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="font-bold text-lg mb-3">Premium Quality</h3>
+                  <p className="text-muted-foreground">
+                    Every product is carefully crafted and quality-tested before shipping to you.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="font-bold text-lg mb-3">Seamless Experience</h3>
+                  <p className="text-muted-foreground">
+                    From design to checkout to fulfillment—everything integrates perfectly.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 py-16 md:py-20 border-y border-border">
+          <div className="container-section">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Ready to Customize Your Ride?
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                Join the EMOTO community and create something truly unique
+              </p>
+              <a href="/design" className="inline-flex items-center gap-2 btn-primary">
+                Start Designing <ArrowRight className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
