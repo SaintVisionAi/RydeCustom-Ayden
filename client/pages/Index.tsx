@@ -209,34 +209,43 @@ export default function Index() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { name: "Pro Carbon Handlebars", price: "$79.99" },
-                { name: "Baja for RYDE", price: "$29.99" },
-                { name: "Full Titanium Kit", price: "$149.99" },
-                { name: "Titanium Pedals", price: "$59.99" },
-                { name: "Professional Brakes", price: "$99.99" },
-                { name: "Custom Wheel Stickers", price: "$9.99" },
+                { name: "Pro Carbon Handlebars", price: "$79.99", badge: "Popular" },
+                { name: "Baja for RYDE", price: "$29.99", badge: "New" },
+                { name: "Full Titanium Kit", price: "$149.99", badge: "" },
+                { name: "Titanium Pedals", price: "$59.99", badge: "" },
+                { name: "Professional Brakes", price: "$99.99", badge: "Sale" },
+                { name: "Custom Wheel Stickers", price: "$9.99", badge: "" },
               ].map((product, index) => (
                 <div
                   key={index}
-                  className="group p-6 bg-white rounded-xl border border-border hover:border-primary transition-all hover:shadow-lg hover:shadow-primary/10"
+                  className="group overflow-hidden rounded-xl border-2 border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 bg-white"
                 >
-                  <div className="aspect-square bg-gradient-to-br from-slate-100 to-slate-50 rounded-lg mb-4 flex items-center justify-center group-hover:from-primary/5 group-hover:to-secondary/5 transition-colors">
-                    <div className="text-slate-300 group-hover:text-primary/20 transition-colors">
-                      [Product Image]
-                    </div>
-                  </div>
-                  <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">
-                    {product.name}
-                  </h3>
-                  <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-primary">{product.price}</span>
-                    {product.name === "Custom Wheel Stickers" ? (
-                      <a href="/customizer" className="btn-secondary py-2 px-4">
-                        Design
-                      </a>
-                    ) : (
-                      <button className="btn-secondary py-2 px-4">Add</button>
+                  <div className="relative aspect-square bg-gradient-to-br from-slate-100 to-slate-200 overflow-hidden flex items-center justify-center">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent group-hover:from-primary/10 transition-all" />
+                    {product.badge && (
+                      <div className="absolute top-3 right-3 z-10">
+                        <span className="inline-block px-3 py-1 bg-primary text-white text-xs font-bold rounded-full">
+                          {product.badge}
+                        </span>
+                      </div>
                     )}
+                    <Layers className="w-16 h-16 text-slate-400 group-hover:text-primary/30 transition-colors" />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
+                      {product.name}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4">Premium custom bike part</p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-2xl font-bold text-primary">{product.price}</span>
+                      {product.name === "Custom Wheel Stickers" ? (
+                        <a href="/customizer" className="btn-primary py-2 px-4 text-sm font-bold hover:scale-105 transition-transform">
+                          Design
+                        </a>
+                      ) : (
+                        <button className="btn-primary py-2 px-4 text-sm font-bold hover:scale-105 transition-transform">Add</button>
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}
