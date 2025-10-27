@@ -1,19 +1,22 @@
 import { Mail, Instagram, TrendingUp } from "lucide-react";
 
+const RYDE_LOGO = "https://cdn.builder.io/api/v1/image/assets%2F20e5d38115c54f2586198244c4136d74%2Fbb16d22ebcb0475a8325ae7e26809b83?format=webp&width=150";
+
 export default function Footer() {
   return (
-    <footer className="w-full bg-slate-900 text-white mt-20">
+    <footer className="w-full bg-[#0f0f0f] text-white mt-20">
       <div className="container-section py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded flex items-center justify-center">
-                <span className="text-white font-bold">⚡</span>
+            <div className="flex items-center gap-3 mb-4">
+              <img src={RYDE_LOGO} alt="RYDE CUSTOM" className="w-10 h-10 object-contain" />
+              <div className="flex flex-col">
+                <span className="font-bold text-lg text-primary" style={{ fontFamily: '"Clash Display", system-ui' }}>RYDE</span>
+                <span className="text-xs font-bold text-gray-400">CUSTOM</span>
               </div>
-              <span className="font-bold text-lg">EMOTO</span>
             </div>
-            <p className="text-gray-300 text-sm">
-              Custom electric bike parts, performance plates, and premium carbon fiber upgrades.
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Custom electric bike parts, performance plates, and premium carbon fiber upgrades powered by innovation.
             </p>
           </div>
 
