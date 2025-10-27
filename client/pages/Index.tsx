@@ -216,7 +216,7 @@ export default function Index() {
                   <div className="flex items-center justify-between">
                     <span className="text-2xl font-bold text-primary">{product.price}</span>
                     {product.name === "Custom Wheel Stickers" ? (
-                      <a href="/customize-sticker" className="btn-secondary py-2 px-4">
+                      <a href="/customizer" className="btn-secondary py-2 px-4">
                         Design
                       </a>
                     ) : (
