@@ -47,17 +47,25 @@ export default function Shop() {
       <Header />
 
       <main className="flex-1 w-full">
-        <section className="w-full bg-gradient-to-b from-slate-900 via-slate-800 to-background py-16 md:py-24">
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+        <section className="w-full relative overflow-hidden h-96 md:h-[500px] flex items-center justify-center">
+          <div
+            className="absolute inset-0 z-0"
+            style={{
+              backgroundImage: 'url(https://images.pexels.com/photos/33503476/pexels-photo-33503476.jpeg)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          >
+            <div className="absolute inset-0 bg-black/50" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           </div>
 
           <div className="container-section relative z-10">
             <div className="max-w-2xl">
-              <h1 className="text-white mb-4 flex items-center gap-3">
+              <h1 className="text-white mb-4 flex items-center gap-3" style={{ fontWeight: '300' }}>
                 <ShoppingCart className="w-10 h-10" /> Shop RYDE CUSTOM
               </h1>
-              <p className="text-xl text-gray-300">
+              <p className="text-2xl text-gray-100" style={{ fontWeight: '300' }}>
                 Browse and purchase custom electric bike parts, upgrades, and accessories
               </p>
             </div>
