@@ -124,13 +124,12 @@ export default function Index() {
           </div>
         </section>
 
-        <section id="categories" className="w-full py-16 md:py-24 bg-background">
+        <section id="categories" className="w-full py-16 md:py-24 bg-gradient-to-b from-background to-slate-50">
           <div className="container-section">
             <div className="text-center mb-16">
-              <h2 className="mb-4">Our Product Categories</h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Everything you need to customize and upgrade your electric bike with premium
-                performance parts.
+              <h2 className="mb-4" style={{ fontWeight: '300' }}>Our Product Categories</h2>
+              <p className="text-2xl text-muted-foreground max-w-3xl mx-auto" style={{ fontWeight: '300' }}>
+                Everything you need to customize and upgrade your electric bike with premium performance parts.
               </p>
             </div>
 
