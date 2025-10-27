@@ -293,7 +293,38 @@ export default function StickerCustomizer() {
             </div>
           </div>
         </div>
+
+        <div className="fixed bottom-6 right-6 md:hidden">
+          <button
+            onClick={() => setIsChatOpen(!isChatOpen)}
+            className="flex items-center gap-2 btn-primary rounded-full p-4 shadow-lg hover:shadow-xl transition-shadow"
+          >
+            <MessageSquare className="w-6 h-6" />
+          </button>
+        </div>
       </main>
+
+      {isChatOpen && (
+        <AIChat
+          isOpen={isChatOpen}
+          onClose={() => setIsChatOpen(false)}
+          initialMessage="Hi! I'm helping you design a custom sticker. What would you like it to say?"
+        />
+      )}
+
+      {!isChatOpen && (
+        <div className="hidden md:block fixed bottom-6 right-6">
+          <button
+            onClick={() => setIsChatOpen(true)}
+            className="flex items-center gap-2 btn-primary rounded-full px-4 py-3 shadow-lg hover:shadow-xl transition-all group"
+          >
+            <MessageSquare className="w-5 h-5" />
+            <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300">
+              EMOTO AI
+            </span>
+          </button>
+        </div>
+      )}
 
       <Footer />
     </div>
