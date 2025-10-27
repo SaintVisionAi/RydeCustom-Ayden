@@ -78,10 +78,10 @@ export default function Design() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/customizer" className="btn-primary">
+                <a href="/customizer" className="btn-primary px-8 py-4 text-lg font-bold">
                   Start Customizing <ArrowRight className="w-5 h-5 ml-2" />
                 </a>
-                <a href="/products" className="btn-outline border-white text-white hover:bg-white/10">
+                <a href="/products" className="btn-outline border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-bold">
                   Browse Pre-Made Designs
                 </a>
               </div>
