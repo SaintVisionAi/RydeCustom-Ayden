@@ -117,9 +117,9 @@ export default function Shop() {
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-16 bg-secondary/5 border-y border-border">
+        <section className="w-full py-12 md:py-16 bg-slate-50 border-y border-border">
           <div className="container-section">
-            <h2 className="text-2xl md:text-3xl font-bold mb-12 text-center">
+            <h2 className="text-4xl md:text-5xl font-light mb-12 text-center" style={{ fontWeight: '300' }}>
               How Our Fulfillment Works
             </h2>
 
