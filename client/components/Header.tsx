@@ -21,15 +21,15 @@ export default function Header() {
     <header className="w-full bg-[#0f0f0f] bg-opacity-98 border-b-2 border-primary sticky top-0 z-50">
       <div className="container-section py-4">
         <div className="flex items-center justify-between">
-          <a href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity group">
+          <a href="/" className="flex items-center gap-4 hover:opacity-90 transition-opacity group">
             <img
               src={RYDE_LOGO}
               alt="RYDE CUSTOM Logo"
-              className="w-14 h-14 object-contain drop-shadow-lg"
+              className="w-20 h-20 object-contain drop-shadow-xl"
             />
             <div className="flex flex-col">
-              <span className="font-black text-2xl text-white group-hover:text-primary transition-colors" style={{ fontFamily: '"Clash Display", system-ui' }}>RYDE</span>
-              <span className="text-xs font-bold text-gray-300 tracking-widest">CUSTOM</span>
+              <span className="font-light text-3xl text-white group-hover:text-primary transition-colors" style={{ fontFamily: '"Clash Display", system-ui', fontWeight: '300' }}>RYDE</span>
+              <span className="text-sm font-light text-gray-400 tracking-widest" style={{ fontWeight: '300' }}>CUSTOM</span>
             </div>
           </a>
 
