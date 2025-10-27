@@ -61,13 +61,13 @@ export default function About() {
         <section className="w-full py-16 md:py-24">
           <div className="container-section">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Mission</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                At EMOTO, we believe that electric bikes are more than just transportation—they're
+              <h2 className="text-4xl md:text-5xl font-light mb-6">Our Mission</h2>
+              <p className="text-xl text-muted-foreground leading-relaxed mb-8" style={{ fontWeight: '300' }}>
+                At RYDE CUSTOM, we believe that electric bikes are more than just transportation—they're
                 an expression of identity and individuality. We empower riders to customize and
                 personalize their bikes exactly the way they want them.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-xl text-muted-foreground leading-relaxed" style={{ fontWeight: '300' }}>
                 With our AI-powered design tools and seamless integration with Printify and
                 Shopify, we make it effortless to create, customize, and order premium bike
                 parts—from glow kits to carbon fiber upgrades to custom license plates.
