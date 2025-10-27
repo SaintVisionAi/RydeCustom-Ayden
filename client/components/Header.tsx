@@ -18,7 +18,7 @@ export default function Header() {
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <header className="w-full bg-white border-b-2 border-primary sticky top-0 z-50 shadow-sm">
+    <header className="w-full bg-[#0f0f0f] bg-opacity-95 border-b-2 border-primary sticky top-0 z-50">
       <div className="container-section py-3">
         <div className="flex items-center justify-between">
           <a href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity group">
