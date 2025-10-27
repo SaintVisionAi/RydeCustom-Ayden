@@ -103,38 +103,38 @@ export default function Design() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-              <div className="relative">
+              <div className="group p-8 bg-white rounded-xl border-2 border-border hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/20">
                 <div className="mb-6 flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary">1</span>
+                  <div className="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <span className="text-2xl font-bold">1</span>
                   </div>
                 </div>
-                <h3 className="font-bold text-lg text-center mb-3">Describe Your Vision</h3>
-                <p className="text-muted-foreground text-center">
+                <h3 className="font-bold text-lg text-center mb-3 text-foreground group-hover:text-primary transition-colors">Describe Your Vision</h3>
+                <p className="text-muted-foreground text-center text-sm">
                   Tell our AI what you want. Be as creative or specific as you like.
                 </p>
               </div>
 
-              <div className="relative">
+              <div className="group p-8 bg-white rounded-xl border-2 border-border hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/20">
                 <div className="mb-6 flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary">2</span>
+                  <div className="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <span className="text-2xl font-bold">2</span>
                   </div>
                 </div>
-                <h3 className="font-bold text-lg text-center mb-3">Customize & Refine</h3>
-                <p className="text-muted-foreground text-center">
+                <h3 className="font-bold text-lg text-center mb-3 text-foreground group-hover:text-primary transition-colors">Customize & Refine</h3>
+                <p className="text-muted-foreground text-center text-sm">
                   Tweak colors, sizes, and styles with our intuitive design tool.
                 </p>
               </div>
 
-              <div className="relative">
+              <div className="group p-8 bg-white rounded-xl border-2 border-border hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/20">
                 <div className="mb-6 flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary">3</span>
+                  <div className="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <span className="text-2xl font-bold">3</span>
                   </div>
                 </div>
-                <h3 className="font-bold text-lg text-center mb-3">Order & Receive</h3>
-                <p className="text-muted-foreground text-center">
+                <h3 className="font-bold text-lg text-center mb-3 text-foreground group-hover:text-primary transition-colors">Order & Receive</h3>
+                <p className="text-muted-foreground text-center text-sm">
                   Once happy, order your custom parts and we'll print and ship them.
                 </p>
               </div>
