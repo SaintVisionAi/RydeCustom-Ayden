@@ -1,6 +1,7 @@
 import "./global.css";
 
 import { Toaster } from "@/components/ui/toaster";
+import { createRoot } from "react-dom/client";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -47,3 +48,16 @@ export const App = () => (
     </TooltipProvider>
   </QueryClientProvider>
 );
+
+// Handle createRoot with HMR support
+const root = document.getElementById("root");
+if (root && !root._reactRootContainer) {
+  const reactRoot = createRoot(root);
+  reactRoot.render(<App />);
+  (root as any)._reactRootContainer = reactRoot;
+}
+
+// HMR support
+if (import.meta.hot) {
+  import.meta.hot.accept();
+}
