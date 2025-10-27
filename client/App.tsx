@@ -9,6 +9,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import StickerCustomizer from "./pages/StickerCustomizer";
+import Products from "./pages/Products";
+import Design from "./pages/Design";
+import Shop from "./pages/Shop";
+import About from "./pages/About";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +24,11 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/design" element={<Design />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/customizer" element={<StickerCustomizer />} />
           <Route path="/customize-sticker" element={<StickerCustomizer />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
