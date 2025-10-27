@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useLocation } from "react-router-dom";
 
-const RYDE_LOGO = "https://cdn.builder.io/api/v1/image/assets%2F20e5d38115c54f2586198244c4136d74%2F5d751f2dc183466d8b3dc9f1dbadfabb?format=webp&width=200";
+const RYDE_LOGO = "https://cdn.builder.io/api/v1/image/assets%2F20e5d38115c54f2586198244c4136d74%2Fbb16d22ebcb0475a8325ae7e26809b83?format=webp&width=200";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
