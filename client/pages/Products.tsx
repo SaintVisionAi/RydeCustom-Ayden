@@ -146,7 +146,7 @@ export default function Products() {
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-16">
+        <section className="w-full py-12 md:py-16 bg-gradient-to-b from-background to-slate-50">
           <div className="container-section">
             <div className="flex items-center gap-3 mb-8 md:mb-12 overflow-x-auto pb-4">
               <Filter className="w-5 h-5 text-muted-foreground flex-shrink-0" />
@@ -155,10 +155,10 @@ export default function Products() {
                   <button
                     key={cat.id}
                     onClick={() => setSelectedCategory(cat.id)}
-                    className={`whitespace-nowrap px-4 py-2 rounded-full font-semibold transition-all duration-200 ${
+                    className={`whitespace-nowrap px-5 py-2 rounded-full font-bold transition-all duration-300 ${
                       selectedCategory === cat.id
-                        ? "bg-primary text-primary-foreground shadow-lg shadow-primary/25"
-                        : "bg-secondary/20 text-foreground hover:bg-secondary/30"
+                        ? "bg-primary text-primary-foreground shadow-lg shadow-primary/30 scale-105"
+                        : "bg-white border-2 border-border text-foreground hover:border-primary/50"
                     }`}
                   >
                     {cat.label}
