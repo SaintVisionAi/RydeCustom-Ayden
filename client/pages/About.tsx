@@ -58,16 +58,16 @@ export default function About() {
           </div>
         </section>
 
-        <section className="w-full py-16 md:py-24">
+        <section className="w-full py-16 md:py-24 bg-gradient-to-b from-background to-slate-50">
           <div className="container-section">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-light mb-6">Our Mission</h2>
-              <p className="text-xl text-muted-foreground leading-relaxed mb-8" style={{ fontWeight: '300' }}>
+              <h2 className="text-5xl md:text-6xl font-light mb-6" style={{ fontWeight: '300' }}>Our Mission</h2>
+              <p className="text-2xl text-muted-foreground leading-relaxed mb-8" style={{ fontWeight: '300' }}>
                 At RYDE CUSTOM, we believe that electric bikes are more than just transportation—they're
                 an expression of identity and individuality. We empower riders to customize and
                 personalize their bikes exactly the way they want them.
               </p>
-              <p className="text-xl text-muted-foreground leading-relaxed" style={{ fontWeight: '300' }}>
+              <p className="text-2xl text-muted-foreground leading-relaxed" style={{ fontWeight: '300' }}>
                 With our AI-powered design tools and seamless integration with Printify and
                 Shopify, we make it effortless to create, customize, and order premium bike
                 parts—from glow kits to carbon fiber upgrades to custom license plates.
