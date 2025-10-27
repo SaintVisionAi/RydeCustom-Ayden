@@ -55,7 +55,7 @@ export default function Shop() {
           <div className="container-section relative z-10">
             <div className="max-w-2xl">
               <h1 className="text-white mb-4 flex items-center gap-3">
-                <ShoppingCart className="w-10 h-10" /> Shop EMOTO
+                <ShoppingCart className="w-10 h-10" /> Shop RYDE CUSTOM
               </h1>
               <p className="text-xl text-gray-300">
                 Browse and purchase custom electric bike parts, upgrades, and accessories
