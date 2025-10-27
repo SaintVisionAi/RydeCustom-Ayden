@@ -93,11 +93,11 @@ export default function Design() {
           </div>
         </section>
 
-        <section className="w-full py-16 md:py-24">
+        <section className="w-full py-16 md:py-24 bg-gradient-to-b from-background to-slate-50">
           <div className="container-section">
             <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
-              <p className="text-lg text-muted-foreground">
+              <h2 className="text-4xl md:text-5xl font-light mb-4" style={{ fontWeight: '300' }}>How It Works</h2>
+              <p className="text-2xl text-muted-foreground" style={{ fontWeight: '300' }}>
                 Three simple steps to create your custom design
               </p>
             </div>
