@@ -92,9 +92,9 @@ export default function Index() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 animate-slide-up animation-delay-200">
-                <button className="btn-primary">
+                <a href="/shop" className="btn-primary">
                   Shop Now <ArrowRight className="w-5 h-5 ml-2" />
-                </button>
+                </a>
                 <button className="btn-outline border-white text-white hover:bg-white/10">
                   Watch Our Viral Video
                 </button>
