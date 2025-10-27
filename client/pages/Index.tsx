@@ -186,11 +186,11 @@ export default function Index() {
           </div>
         </section>
 
-        <section id="products" className="w-full py-16 md:py-24 bg-background">
+        <section id="products" className="w-full py-16 md:py-24 bg-slate-50">
           <div className="container-section">
             <div className="text-center mb-16">
-              <h2 className="mb-4">Featured Products</h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              <h2 className="mb-4" style={{ fontWeight: '300' }}>Featured Products</h2>
+              <p className="text-2xl text-muted-foreground max-w-3xl mx-auto" style={{ fontWeight: '300' }}>
                 Handpicked custom parts and accessories for your electric bike.
               </p>
             </div>
