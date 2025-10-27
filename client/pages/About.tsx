@@ -104,8 +104,8 @@ export default function About() {
         <section className="w-full py-16 md:py-24">
           <div className="container-section">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">The EMOTO Stack</h2>
-              <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
+              <h2 className="text-4xl md:text-5xl font-light mb-6" style={{ fontWeight: '300' }}>The RYDE Stack</h2>
+              <p className="text-xl text-muted-foreground mb-12 leading-relaxed" style={{ fontWeight: '300' }}>
                 Behind every custom creation is a powerful technology stack designed to deliver
                 the best experience:
               </p>
@@ -130,7 +130,7 @@ export default function About() {
                 <div className="p-6 bg-primary/5 rounded-lg border border-primary/20">
                   <h3 className="font-bold text-lg mb-3">🧠 Claude (Anthropic)</h3>
                   <p className="text-muted-foreground">
-                    Our AI agent. EMOTO AI helps customers brainstorm designs, answer product
+                    Our AI agent. RYDE AI helps customers brainstorm designs, answer product
                     questions, and recommend perfect upgrades for their bikes.
                   </p>
                 </div>
@@ -158,7 +158,7 @@ export default function About() {
         <section className="w-full py-16 md:py-24 bg-secondary/5 border-y border-border">
           <div className="container-section">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why EMOTO?</h2>
+              <h2 className="text-4xl md:text-5xl font-light mb-6" style={{ fontWeight: '300' }}>Why RYDE CUSTOM?</h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
