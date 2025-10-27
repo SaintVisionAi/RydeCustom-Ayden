@@ -106,11 +106,11 @@ export default function Shop() {
                 ))}
               </div>
 
-              <div className="mt-10 p-6 bg-secondary/5 rounded-lg border border-border text-center">
-                <p className="text-muted-foreground mb-4">
+              <div className="mt-10 p-8 bg-white rounded-xl border-2 border-primary/20 hover:border-primary/50 transition-all text-center">
+                <p className="text-muted-foreground mb-4 font-semibold">
                   📌 Shopify Buy Button or Product Collection will be embedded here
                 </p>
-                <code className="text-xs bg-background px-3 py-1 rounded inline-block text-muted-foreground">
+                <code className="text-xs bg-slate-100 px-4 py-2 rounded-lg inline-block text-muted-foreground font-mono">
                   {`<!-- Shopify Buy Button Code -->`}
                 </code>
               </div>
