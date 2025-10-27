@@ -32,12 +32,12 @@ const FEATURES: Feature[] = [
 function FeatureCard({ feature }: { feature: Feature }) {
   const Icon = feature.icon;
   return (
-    <div className="group p-6 rounded-xl border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 bg-card">
-      <div className="mb-4 inline-flex p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+    <div className="group p-8 rounded-xl border-2 border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 bg-white">
+      <div className="mb-4 inline-flex p-4 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
         <Icon className="w-6 h-6 text-primary" />
       </div>
-      <h3 className="font-bold text-lg mb-3 text-foreground">{feature.title}</h3>
-      <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+      <h3 className="font-bold text-lg mb-3 text-foreground group-hover:text-primary transition-colors">{feature.title}</h3>
+      <p className="text-muted-foreground leading-relaxed text-sm">{feature.description}</p>
     </div>
   );
 }
