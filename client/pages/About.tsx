@@ -76,22 +76,22 @@ export default function About() {
           </div>
         </section>
 
-        <section className="w-full py-16 md:py-24 bg-slate-50 border-y border-border">
+        <section className="w-full py-16 md:py-24 bg-slate-50 border-y-2 border-primary/20">
           <div className="container-section">
-            <h2 className="text-4xl md:text-5xl font-light mb-12 text-center" style={{ fontWeight: '300' }}>Our Values</h2>
+            <h2 className="text-5xl md:text-6xl font-light mb-12 text-center" style={{ fontWeight: '300' }}>Our Values</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {VALUES.map((value, index) => {
                 const Icon = value.icon;
                 return (
-                  <div key={index} className="text-center">
+                  <div key={index} className="group p-8 bg-white rounded-xl border-2 border-border hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/20">
                     <div className="flex justify-center mb-4">
-                      <div className="p-3 rounded-lg bg-primary/10">
+                      <div className="p-4 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
                         <Icon className="w-6 h-6 text-primary" />
                       </div>
                     </div>
-                    <h3 className="font-bold text-lg mb-3">{value.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <h3 className="font-bold text-lg mb-3 text-center text-foreground group-hover:text-primary transition-colors">{value.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed text-center text-sm">
                       {value.description}
                     </p>
                   </div>
