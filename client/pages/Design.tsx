@@ -159,19 +159,19 @@ export default function Design() {
           </div>
         </section>
 
-        <section className="w-full py-16 md:py-24">
+        <section className="w-full py-16 md:py-24 bg-slate-50">
           <div className="container-section">
             <div className="max-w-4xl mx-auto">
-              <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl border border-primary/20 p-8 md:p-12">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              <div className="bg-white rounded-2xl border-2 border-primary/20 hover:border-primary/50 transition-all p-8 md:p-12">
+                <h2 className="text-3xl md:text-4xl font-light mb-4" style={{ fontWeight: '300' }}>
                   Need Expert Advice?
                 </h2>
-                <p className="text-lg text-muted-foreground mb-6 max-w-2xl">
+                <p className="text-xl text-muted-foreground mb-6 max-w-2xl" style={{ fontWeight: '300' }}>
                   Our AI agent can help you choose the right materials, suggest designs, and
                   answer any questions about custom bike parts.
                 </p>
-                <a href="/customizer" className="inline-flex items-center gap-2 btn-primary">
-                  Chat with EMOTO AI <ArrowRight className="w-5 h-5" />
+                <a href="/customizer" className="inline-flex items-center gap-2 btn-primary px-8 py-4 text-lg font-bold">
+                  Chat with RYDE AI <ArrowRight className="w-5 h-5" />
                 </a>
               </div>
             </div>
