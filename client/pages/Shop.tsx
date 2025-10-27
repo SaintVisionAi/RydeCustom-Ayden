@@ -72,11 +72,11 @@ export default function Shop() {
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-16">
+        <section className="w-full py-12 md:py-16 bg-gradient-to-b from-background to-slate-50">
           <div className="container-section">
             <div className="mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">Featured Products</h2>
-              <p className="text-muted-foreground mb-8">
+              <h2 className="text-4xl md:text-5xl font-light mb-4" style={{ fontWeight: '300' }}>Featured Products</h2>
+              <p className="text-xl text-muted-foreground mb-8" style={{ fontWeight: '300' }}>
                 Shopify product catalog integration will load here with live inventory and pricing.
               </p>
 
