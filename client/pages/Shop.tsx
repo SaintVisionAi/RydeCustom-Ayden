@@ -184,40 +184,48 @@ export default function Shop() {
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-16">
+        <section className="w-full py-12 md:py-16 bg-slate-50">
           <div className="container-section">
-            <h2 className="text-2xl md:text-3xl font-bold mb-12 text-center">
+            <h2 className="text-4xl md:text-5xl font-light mb-12 text-center" style={{ fontWeight: '300' }}>
               Shop With Confidence
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {GUARANTEES.map((guarantee, index) => (
-                <GuaranteeCard key={index} guarantee={guarantee} />
+                <div key={index} className="group p-8 bg-white rounded-xl border-2 border-border hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/20">
+                  <div className="flex justify-center mb-4">
+                    <div className="p-4 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                      <guarantee.icon className="w-6 h-6 text-primary" />
+                    </div>
+                  </div>
+                  <h3 className="font-bold text-lg text-center text-foreground group-hover:text-primary transition-colors mb-2">{guarantee.title}</h3>
+                  <p className="text-muted-foreground text-center text-sm">{guarantee.description}</p>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="w-full bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 py-16 md:py-20 border-y border-border">
+        <section className="w-full bg-white py-16 md:py-20 border-y-2 border-primary/20">
           <div className="container-section">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-4xl md:text-5xl font-light mb-4" style={{ fontWeight: '300' }}>
                 Want Something Custom?
               </h2>
-              <p className="text-lg text-muted-foreground mb-8">
+              <p className="text-2xl text-muted-foreground mb-8" style={{ fontWeight: '300' }}>
                 Design your perfect custom parts with our AI-powered design tool
               </p>
-              <a href="/design" className="inline-flex items-center gap-2 btn-primary">
+              <a href="/design" className="inline-flex items-center gap-2 btn-primary px-8 py-4 text-lg font-bold">
                 Start Designing <ArrowRight className="w-5 h-5" />
               </a>
             </div>
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-16">
+        <section className="w-full py-12 md:py-16 bg-slate-50">
           <div className="container-section">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl font-bold mb-6">Payment & Security</h2>
+              <h2 className="text-3xl md:text-4xl font-light mb-6" style={{ fontWeight: '300' }}>Payment & Security</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
                   💳 <span className="font-semibold">Shopify Payments</span> - Our primary
