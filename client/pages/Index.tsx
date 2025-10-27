@@ -150,40 +150,38 @@ export default function Index() {
           </div>
         </section>
 
-        <section id="video" className="w-full py-16 md:py-24 bg-slate-50">
+        <section id="video" className="w-full py-16 md:py-24 bg-background">
           <div className="container-section">
             <div className="text-center mb-12">
-              <h2 className="mb-4">See It In Action</h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Watch our viral video showcasing the ultimate custom electric bike setup with
-                RYDE CUSTOM parts.
+              <h2 className="mb-4" style={{ fontWeight: '300' }}>See It In Action</h2>
+              <p className="text-2xl text-muted-foreground max-w-3xl mx-auto" style={{ fontWeight: '300' }}>
+                Watch the ultimate custom electric bike setup powered by RYDE CUSTOM parts.
               </p>
             </div>
 
-            <div className="relative bg-slate-900 rounded-2xl overflow-hidden h-96 md:h-screen max-h-screen flex items-center justify-center">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20" />
-              <button className="relative z-10 w-20 h-20 bg-primary rounded-full flex items-center justify-center hover:scale-110 transition-transform group shadow-lg shadow-primary/40">
-                <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </button>
-              <div className="absolute inset-0 flex items-center justify-center text-white text-center pointer-events-none">
-                <div className="text-gray-400">Your Viral Video Here</div>
-              </div>
+            <div className="relative rounded-2xl overflow-hidden h-96 md:h-[600px] bg-black group">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                title="RYDE CUSTOM - Unleash Your Potential"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
             </div>
 
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-6 bg-white rounded-xl border border-border">
-                <div className="text-4xl font-bold text-primary mb-2">2M+</div>
-                <p className="text-muted-foreground">Views on social media</p>
+            <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="p-8 bg-white rounded-xl border-2 border-primary/20 hover:border-primary/50 transition-all">
+                <div className="text-5xl font-light text-primary mb-2">2M+</div>
+                <p className="text-muted-foreground text-lg">Views on social media</p>
               </div>
-              <div className="p-6 bg-white rounded-xl border border-border">
-                <div className="text-4xl font-bold text-secondary mb-2">500K+</div>
-                <p className="text-muted-foreground">Shares and engagement</p>
+              <div className="p-8 bg-white rounded-xl border-2 border-primary/20 hover:border-primary/50 transition-all">
+                <div className="text-5xl font-light text-primary mb-2">500K+</div>
+                <p className="text-muted-foreground text-lg">Shares and engagement</p>
               </div>
-              <div className="p-6 bg-white rounded-xl border border-border">
-                <div className="text-4xl font-bold text-primary mb-2">#1</div>
-                <p className="text-muted-foreground">Trending in custom parts</p>
+              <div className="p-8 bg-white rounded-xl border-2 border-primary/20 hover:border-primary/50 transition-all">
+                <div className="text-5xl font-light text-primary mb-2">#1</div>
+                <p className="text-muted-foreground text-lg">Trending in custom parts</p>
               </div>
             </div>
           </div>
