@@ -101,51 +101,51 @@ export default function About() {
           </div>
         </section>
 
-        <section className="w-full py-16 md:py-24">
+        <section className="w-full py-16 md:py-24 bg-gradient-to-b from-white to-slate-50">
           <div className="container-section">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-light mb-6" style={{ fontWeight: '300' }}>The RYDE Stack</h2>
-              <p className="text-xl text-muted-foreground mb-12 leading-relaxed" style={{ fontWeight: '300' }}>
+              <h2 className="text-5xl md:text-6xl font-light mb-6" style={{ fontWeight: '300' }}>The RYDE Stack</h2>
+              <p className="text-2xl text-muted-foreground mb-12 leading-relaxed" style={{ fontWeight: '300' }}>
                 Behind every custom creation is a powerful technology stack designed to deliver
                 the best experience:
               </p>
 
-              <div className="space-y-8">
-                <div className="p-6 bg-primary/5 rounded-lg border border-primary/20">
-                  <h3 className="font-bold text-lg mb-3">🛒 Shopify</h3>
-                  <p className="text-muted-foreground">
+              <div className="space-y-6">
+                <div className="group p-8 bg-white rounded-xl border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/20">
+                  <h3 className="font-bold text-xl mb-3 text-foreground group-hover:text-primary transition-colors">🛒 Shopify</h3>
+                  <p className="text-muted-foreground text-sm">
                     Our e-commerce backbone. Shopify powers our product catalog, inventory
                     management, and secure checkout experience.
                   </p>
                 </div>
 
-                <div className="p-6 bg-secondary/5 rounded-lg border border-secondary/20">
-                  <h3 className="font-bold text-lg mb-3">🏭 Printify</h3>
-                  <p className="text-muted-foreground">
+                <div className="group p-8 bg-white rounded-xl border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/20">
+                  <h3 className="font-bold text-xl mb-3 text-foreground group-hover:text-primary transition-colors">🏭 Printify</h3>
+                  <p className="text-muted-foreground text-sm">
                     Print-on-demand fulfillment partner. Printify handles production, quality
                     assurance, and direct shipping—zero inventory waste.
                   </p>
                 </div>
 
-                <div className="p-6 bg-primary/5 rounded-lg border border-primary/20">
-                  <h3 className="font-bold text-lg mb-3">🧠 Claude (Anthropic)</h3>
-                  <p className="text-muted-foreground">
+                <div className="group p-8 bg-white rounded-xl border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/20">
+                  <h3 className="font-bold text-xl mb-3 text-foreground group-hover:text-primary transition-colors">🧠 Claude (Anthropic)</h3>
+                  <p className="text-muted-foreground text-sm">
                     Our AI agent. RYDE AI helps customers brainstorm designs, answer product
                     questions, and recommend perfect upgrades for their bikes.
                   </p>
                 </div>
 
-                <div className="p-6 bg-secondary/5 rounded-lg border border-secondary/20">
-                  <h3 className="font-bold text-lg mb-3">💳 Stripe</h3>
-                  <p className="text-muted-foreground">
+                <div className="group p-8 bg-white rounded-xl border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/20">
+                  <h3 className="font-bold text-xl mb-3 text-foreground group-hover:text-primary transition-colors">💳 Stripe</h3>
+                  <p className="text-muted-foreground text-sm">
                     Advanced payment processing for specialized flows, coaching calls, and
                     custom orders outside the standard Shopify checkout.
                   </p>
                 </div>
 
-                <div className="p-6 bg-primary/5 rounded-lg border border-primary/20">
-                  <h3 className="font-bold text-lg mb-3">🎨 Builder.io</h3>
-                  <p className="text-muted-foreground">
+                <div className="group p-8 bg-white rounded-xl border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/20">
+                  <h3 className="font-bold text-xl mb-3 text-foreground group-hover:text-primary transition-colors">🎨 Builder.io</h3>
+                  <p className="text-muted-foreground text-sm">
                     Frontend control and visual management of our website. Builder.io lets us
                     rapidly iterate on design and content without redeploying.
                   </p>
