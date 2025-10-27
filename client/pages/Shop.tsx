@@ -76,7 +76,7 @@ export default function Shop() {
           <div className="container-section">
             <div className="mb-8">
               <h2 className="text-4xl md:text-5xl font-light mb-4" style={{ fontWeight: '300' }}>Featured Products</h2>
-              <p className="text-xl text-muted-foreground mb-8" style={{ fontWeight: '300' }}>
+              <p className="text-2xl text-muted-foreground mb-8" style={{ fontWeight: '300' }}>
                 Shopify product catalog integration will load here with live inventory and pricing.
               </p>
 
@@ -84,20 +84,21 @@ export default function Shop() {
                 {[1, 2, 3].map((item) => (
                   <div
                     key={item}
-                    className="rounded-lg border border-border bg-card overflow-hidden hover:shadow-lg transition-all duration-300"
+                    className="group overflow-hidden rounded-xl border-2 border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 bg-white"
                   >
-                    <div className="aspect-square bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center text-slate-400">
-                      Product Image {item}
+                    <div className="relative aspect-square bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center text-slate-400">
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent group-hover:from-primary/10 transition-all" />
+                      <span className="relative group-hover:text-primary/30 transition-colors">Product Image {item}</span>
                     </div>
-                    <div className="p-5">
-                      <h3 className="font-bold text-lg mb-2">Product Name {item}</h3>
+                    <div className="p-6">
+                      <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">Product Name {item}</h3>
                       <p className="text-sm text-muted-foreground mb-4">
                         Premium custom bike part with exceptional quality
                       </p>
                       <div className="flex items-center justify-between">
-                        <span className="text-2xl font-bold">$XX.XX</span>
-                        <button className="btn-primary py-2 text-sm">
-                          Add to Cart
+                        <span className="text-2xl font-bold text-primary">$XX.XX</span>
+                        <button className="btn-primary py-2 px-4 text-sm font-bold hover:scale-105 transition-transform">
+                          Add
                         </button>
                       </div>
                     </div>
