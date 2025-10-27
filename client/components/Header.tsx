@@ -53,7 +53,7 @@ export default function Header() {
           </nav>
 
           <button
-            className="md:hidden text-foreground hover:text-primary transition-colors"
+            className="md:hidden text-white hover:text-primary transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -66,22 +66,22 @@ export default function Header() {
         </div>
 
         {mobileMenuOpen && (
-          <nav className="md:hidden flex flex-col gap-3 mt-4 pb-4 border-t border-border pt-4">
+          <nav className="md:hidden flex flex-col gap-3 mt-4 pb-4 border-t border-gray-700 pt-4">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className={`font-medium transition-colors py-2 ${
+                className={`font-semibold transition-colors py-2 ${
                   isActive(item.href)
                     ? "text-primary border-l-2 border-primary pl-3"
-                    : "text-foreground hover:text-primary"
+                    : "text-white hover:text-primary"
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.label}
               </a>
             ))}
-            <a href="/shop" className="btn-primary w-full text-center py-3 mt-2">
+            <a href="/shop" className="btn-primary w-full text-center py-3 mt-2 font-bold">
               Shop Now
             </a>
           </nav>
