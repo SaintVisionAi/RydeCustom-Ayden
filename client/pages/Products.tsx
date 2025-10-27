@@ -76,23 +76,23 @@ const CATEGORIES = [
 
 function ProductCard({ product }: { product: Product }) {
   return (
-    <div className="group overflow-hidden rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 bg-card">
-      <div className="relative aspect-square bg-gradient-to-br from-slate-50 to-slate-100 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 group-hover:from-primary/10 group-hover:to-secondary/10 transition-all duration-300" />
+    <div className="group overflow-hidden rounded-xl border-2 border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 bg-white">
+      <div className="relative aspect-square bg-gradient-to-br from-slate-100 to-slate-200 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent group-hover:from-primary/10 transition-all duration-300" />
         {product.badge && (
           <div className="absolute top-3 right-3 z-10">
-            <span className="inline-block px-3 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full">
+            <span className="inline-block px-3 py-1 bg-primary text-white text-xs font-bold rounded-full">
               {product.badge}
             </span>
           </div>
         )}
-        <div className="absolute inset-0 flex items-center justify-center text-slate-300 text-sm font-medium group-hover:text-primary/40 transition-colors">
+        <div className="absolute inset-0 flex items-center justify-center text-slate-400 text-sm font-medium group-hover:text-primary/30 transition-colors">
           {product.image}
         </div>
       </div>
 
-      <div className="p-5">
-        <p className="text-xs text-primary font-semibold uppercase tracking-wide mb-2">
+      <div className="p-6">
+        <p className="text-xs text-primary font-bold uppercase tracking-widest mb-2">
           {product.category}
         </p>
         <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
@@ -100,9 +100,9 @@ function ProductCard({ product }: { product: Product }) {
         </h3>
         <p className="text-muted-foreground text-sm mb-4">{product.description}</p>
         <div className="flex items-center justify-between">
-          <span className="text-2xl font-bold text-foreground">${product.price}</span>
-          <button className="flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
-            <ArrowRight className="w-4 h-4" />
+          <span className="text-2xl font-bold text-primary">${product.price}</span>
+          <button className="btn-primary py-2 px-4 text-sm font-bold hover:scale-105 transition-transform flex items-center gap-2">
+            <ArrowRight className="w-4 h-4" /> Add
           </button>
         </div>
       </div>
