@@ -183,18 +183,18 @@ export default function Products() {
           </div>
         </section>
 
-        <section className="w-full bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 py-16 md:py-20 border-y border-border">
+        <section className="w-full bg-slate-50 py-16 md:py-20 border-y-2 border-primary/20">
           <div className="container-section">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-4xl md:text-5xl font-light mb-4" style={{ fontWeight: '300' }}>
                 Didn't find what you need?
               </h2>
-              <p className="text-lg text-muted-foreground mb-8">
+              <p className="text-2xl text-muted-foreground mb-8" style={{ fontWeight: '300' }}>
                 Design your own custom parts with our AI-powered customizer
               </p>
               <a
                 href="/design"
-                className="inline-flex items-center gap-2 btn-primary"
+                className="inline-flex items-center gap-2 btn-primary px-8 py-4 text-lg font-bold"
               >
                 Start Designing <ArrowRight className="w-5 h-5" />
               </a>
