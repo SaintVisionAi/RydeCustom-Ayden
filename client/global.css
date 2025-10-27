@@ -7,37 +7,38 @@
 
 @layer base {
   /**
-   * Custom Emoto Parts brand colors
-   * Modern, bold, and performance-oriented design
+   * RYDE CUSTOM brand colors
+   * Charcoal (#0f0f0f) + Bright Gold accents
+   * Premium, bold, and performance-oriented design
    */
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 20% 8%;
+    --foreground: 0 0% 6%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 8%;
+    --card-foreground: 0 0% 6%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 8%;
+    --popover-foreground: 0 0% 6%;
 
-    --primary: 260 95% 50%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 45 100% 50%;
+    --primary-foreground: 0 0% 6%;
 
-    --secondary: 15 100% 55%;
+    --secondary: 45 85% 45%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 12% 84%;
-    --muted-foreground: 220 8% 40%;
+    --muted: 0 0% 84%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 260 95% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 100% 50%;
+    --accent-foreground: 0 0% 6%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 12% 92%;
-    --input: 220 12% 92%;
-    --ring: 260 95% 50%;
+    --border: 0 0% 92%;
+    --input: 0 0% 92%;
+    --ring: 45 100% 50%;
 
     --radius: 0.75rem;
 
