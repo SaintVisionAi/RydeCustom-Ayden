@@ -99,7 +99,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
-            <p>&copy; 2024 EMOTO Parts. All rights reserved.</p>
+            <p>&copy; 2024 RYDE CUSTOM. All rights reserved.</p>
             <div className="flex gap-4 mt-4 md:mt-0">
               <a href="#" className="hover:text-white transition-colors">
                 Privacy Policy
