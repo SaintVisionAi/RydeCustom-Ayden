@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { ArrowLeft, Copy, Download, ShoppingCart, MessageSquare } from "lucide-react";
+import {
+  ArrowLeft,
+  Copy,
+  Download,
+  ShoppingCart,
+  MessageSquare,
+} from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AIChat from "@/components/AIChat";
@@ -87,7 +93,9 @@ export default function StickerCustomizer() {
                       overflow: "hidden",
                     }}
                   >
-                    <span className="text-lg md:text-2xl px-4">{text || "RYDE"}</span>
+                    <span className="text-lg md:text-2xl px-4">
+                      {text || "RYDE"}
+                    </span>
                   </div>
                 </div>
 
@@ -109,7 +117,7 @@ export default function StickerCustomizer() {
                           size,
                           shape,
                           borderStyle,
-                        })
+                        }),
                       );
                       alert("Design copied to clipboard!");
                     }}
@@ -130,7 +138,9 @@ export default function StickerCustomizer() {
                   </div>
                   <div>
                     <p className="text-sm text-blue-700">Quantity</p>
-                    <p className="text-2xl font-bold text-primary">{quantity}</p>
+                    <p className="text-2xl font-bold text-primary">
+                      {quantity}
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center justify-between">

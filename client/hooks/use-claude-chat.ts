@@ -27,18 +27,22 @@ export function useClaudeChat(): UseClaudioChatReturn {
 
         const response = await callClaudeAPI(updatedMessages);
 
-        const assistantMessage: Message = { role: "assistant", content: response };
+        const assistantMessage: Message = {
+          role: "assistant",
+          content: response,
+        };
 
         setMessages([...updatedMessages, assistantMessage]);
       } catch (err) {
-        const errorMessage = err instanceof Error ? err.message : "An error occurred";
+        const errorMessage =
+          err instanceof Error ? err.message : "An error occurred";
         setError(errorMessage);
         console.error("Error sending message:", err);
       } finally {
         setIsLoading(false);
       }
     },
-    [messages]
+    [messages],
   );
 
   const streamMessage = useCallback(
@@ -61,14 +65,15 @@ export function useClaudeChat(): UseClaudioChatReturn {
           setMessages([...updatedMessages, assistantMessage]);
         });
       } catch (err) {
-        const errorMessage = err instanceof Error ? err.message : "An error occurred";
+        const errorMessage =
+          err instanceof Error ? err.message : "An error occurred";
         setError(errorMessage);
         console.error("Error streaming message:", err);
       } finally {
         setIsLoading(false);
       }
     },
-    [messages]
+    [messages],
   );
 
   const clearMessages = useCallback(() => {

@@ -38,7 +38,7 @@ export const EMOTO_CONFIG = {
   tagline: "Custom Electric Bike Parts",
   description:
     "Premium custom bike parts, personalized plates, exclusive stickers, and premium carbon fiber upgrades for the ultimate electric bike experience.",
-  
+
   // Product Categories
   categories: {
     performance: "Performance Bike Parts",
@@ -111,20 +111,27 @@ export function validateIntegrations(): {
   }
 
   if (!SHOPIFY_CONFIG.storeId || !SHOPIFY_CONFIG.accessToken) {
-    const msg = "Shopify configuration incomplete. Products and checkout will not work.";
+    const msg =
+      "Shopify configuration incomplete. Products and checkout will not work.";
     if (isDev) {
-      warnings.push(`[DEV] ${msg} Set VITE_SHOPIFY_STORE_ID and VITE_SHOPIFY_ACCESS_TOKEN in .env.local to enable.`);
+      warnings.push(
+        `[DEV] ${msg} Set VITE_SHOPIFY_STORE_ID and VITE_SHOPIFY_ACCESS_TOKEN in .env.local to enable.`,
+      );
     } else {
       errors.push(msg);
     }
   }
 
   if (!PRINTIFY_CONFIG.apiKey || !PRINTIFY_CONFIG.storeId) {
-    warnings.push("Printify configuration incomplete. Print-on-demand features limited. Set VITE_PRINTIFY_API_KEY and VITE_PRINTIFY_STORE_ID in .env.local.");
+    warnings.push(
+      "Printify configuration incomplete. Print-on-demand features limited. Set VITE_PRINTIFY_API_KEY and VITE_PRINTIFY_STORE_ID in .env.local.",
+    );
   }
 
   if (!STRIPE_CONFIG.enabled) {
-    warnings.push("Stripe not configured. Some payment flows will be unavailable.");
+    warnings.push(
+      "Stripe not configured. Some payment flows will be unavailable.",
+    );
   }
 
   return {

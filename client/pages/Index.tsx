@@ -40,25 +40,29 @@ export default function Index() {
     {
       icon: Zap,
       title: "Performance Bike Parts",
-      description: "High-performance electric and custom bike components for speed and reliability.",
+      description:
+        "High-performance electric and custom bike components for speed and reliability.",
       image: "bike-parts",
     },
     {
       icon: Palette,
       title: "Custom Plates & Decals",
-      description: "Personalized license plates and custom decals to make your ride unique.",
+      description:
+        "Personalized license plates and custom decals to make your ride unique.",
       image: "plates",
     },
     {
       icon: Layers,
       title: "Carbon Fiber Upgrades",
-      description: "Lightweight and durable carbon fiber parts for maximum performance.",
+      description:
+        "Lightweight and durable carbon fiber parts for maximum performance.",
       image: "carbon",
     },
     {
       icon: Palette,
       title: "Premium Stickers",
-      description: "High-quality vinyl stickers for branding and customization.",
+      description:
+        "High-quality vinyl stickers for branding and customization.",
       image: "stickers",
     },
   ];
@@ -72,9 +76,10 @@ export default function Index() {
           <div
             className="absolute inset-0 z-0"
             style={{
-              backgroundImage: 'url(https://images.pexels.com/photos/733740/pexels-photo-733740.jpeg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
+              backgroundImage:
+                "url(https://images.pexels.com/photos/733740/pexels-photo-733740.jpeg)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
           >
             <div className="absolute inset-0 bg-black/50" />
@@ -89,34 +94,53 @@ export default function Index() {
                 </span>
               </div>
 
-              <h1 className="text-white mb-6 animate-fade-in" style={{ fontWeight: '300' }}>
+              <h1
+                className="text-white mb-6 animate-fade-in"
+                style={{ fontWeight: "300" }}
+              >
                 Dominate The Road
               </h1>
 
-              <p className="text-2xl text-gray-100 mb-8 leading-relaxed max-w-2xl animate-slide-up animation-delay-100" style={{ fontWeight: '300' }}>
-                Premium custom electric bike parts, personalized designs, and carbon fiber upgrades for riders who demand more.
+              <p
+                className="text-2xl text-gray-100 mb-8 leading-relaxed max-w-2xl animate-slide-up animation-delay-100"
+                style={{ fontWeight: "300" }}
+              >
+                Premium custom electric bike parts, personalized designs, and
+                carbon fiber upgrades for riders who demand more.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 animate-slide-up animation-delay-200">
-                <a href="/shop" className="btn-primary px-8 py-4 text-lg font-bold">
+                <a
+                  href="/shop"
+                  className="btn-primary px-8 py-4 text-lg font-bold"
+                >
                   Shop Now <ArrowRight className="w-5 h-5 ml-2" />
                 </a>
-                <a href="#video" className="btn-outline border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-bold">
+                <a
+                  href="#video"
+                  className="btn-outline border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-bold"
+                >
                   Watch Video
                 </a>
               </div>
 
               <div className="mt-12 flex flex-col sm:flex-row gap-8 text-gray-200 text-lg">
                 <div>
-                  <div className="text-4xl font-light text-primary mb-1">500+</div>
+                  <div className="text-4xl font-light text-primary mb-1">
+                    500+
+                  </div>
                   <div className="text-gray-300">Custom Parts</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-light text-primary mb-1">10K+</div>
+                  <div className="text-4xl font-light text-primary mb-1">
+                    10K+
+                  </div>
                   <div className="text-gray-300">Happy Riders</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-light text-primary mb-1">2M+</div>
+                  <div className="text-4xl font-light text-primary mb-1">
+                    2M+
+                  </div>
                   <div className="text-gray-300">Video Views</div>
                 </div>
               </div>
@@ -124,12 +148,21 @@ export default function Index() {
           </div>
         </section>
 
-        <section id="categories" className="w-full py-16 md:py-24 bg-gradient-to-b from-background to-slate-50">
+        <section
+          id="categories"
+          className="w-full py-16 md:py-24 bg-gradient-to-b from-background to-slate-50"
+        >
           <div className="container-section">
             <div className="text-center mb-16">
-              <h2 className="mb-4" style={{ fontWeight: '300' }}>Our Product Categories</h2>
-              <p className="text-2xl text-muted-foreground max-w-3xl mx-auto" style={{ fontWeight: '300' }}>
-                Everything you need to customize and upgrade your electric bike with premium performance parts.
+              <h2 className="mb-4" style={{ fontWeight: "300" }}>
+                Our Product Categories
+              </h2>
+              <p
+                className="text-2xl text-muted-foreground max-w-3xl mx-auto"
+                style={{ fontWeight: "300" }}
+              >
+                Everything you need to customize and upgrade your electric bike
+                with premium performance parts.
               </p>
             </div>
 
@@ -149,8 +182,12 @@ export default function Index() {
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">{category.title}</h3>
-                    <p className="text-muted-foreground text-sm mb-4">{category.description}</p>
+                    <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
+                      {category.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4">
+                      {category.description}
+                    </p>
                     <button className="flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
                       Explore <ArrowRight className="w-4 h-4" />
                     </button>
@@ -164,9 +201,15 @@ export default function Index() {
         <section id="video" className="w-full py-16 md:py-24 bg-background">
           <div className="container-section">
             <div className="text-center mb-12">
-              <h2 className="mb-4" style={{ fontWeight: '300' }}>See It In Action</h2>
-              <p className="text-2xl text-muted-foreground max-w-3xl mx-auto" style={{ fontWeight: '300' }}>
-                Watch the ultimate custom electric bike setup powered by RYDE CUSTOM parts.
+              <h2 className="mb-4" style={{ fontWeight: "300" }}>
+                See It In Action
+              </h2>
+              <p
+                className="text-2xl text-muted-foreground max-w-3xl mx-auto"
+                style={{ fontWeight: "300" }}
+              >
+                Watch the ultimate custom electric bike setup powered by RYDE
+                CUSTOM parts.
               </p>
             </div>
 
@@ -184,15 +227,23 @@ export default function Index() {
             <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="p-8 bg-white rounded-xl border-2 border-primary/20 hover:border-primary/50 transition-all">
                 <div className="text-5xl font-light text-primary mb-2">2M+</div>
-                <p className="text-muted-foreground text-lg">Views on social media</p>
+                <p className="text-muted-foreground text-lg">
+                  Views on social media
+                </p>
               </div>
               <div className="p-8 bg-white rounded-xl border-2 border-primary/20 hover:border-primary/50 transition-all">
-                <div className="text-5xl font-light text-primary mb-2">500K+</div>
-                <p className="text-muted-foreground text-lg">Shares and engagement</p>
+                <div className="text-5xl font-light text-primary mb-2">
+                  500K+
+                </div>
+                <p className="text-muted-foreground text-lg">
+                  Shares and engagement
+                </p>
               </div>
               <div className="p-8 bg-white rounded-xl border-2 border-primary/20 hover:border-primary/50 transition-all">
                 <div className="text-5xl font-light text-primary mb-2">#1</div>
-                <p className="text-muted-foreground text-lg">Trending in custom parts</p>
+                <p className="text-muted-foreground text-lg">
+                  Trending in custom parts
+                </p>
               </div>
             </div>
           </div>
@@ -201,15 +252,24 @@ export default function Index() {
         <section id="products" className="w-full py-16 md:py-24 bg-slate-50">
           <div className="container-section">
             <div className="text-center mb-16">
-              <h2 className="mb-4" style={{ fontWeight: '300' }}>Featured Products</h2>
-              <p className="text-2xl text-muted-foreground max-w-3xl mx-auto" style={{ fontWeight: '300' }}>
+              <h2 className="mb-4" style={{ fontWeight: "300" }}>
+                Featured Products
+              </h2>
+              <p
+                className="text-2xl text-muted-foreground max-w-3xl mx-auto"
+                style={{ fontWeight: "300" }}
+              >
                 Handpicked custom parts and accessories for your electric bike.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { name: "Pro Carbon Handlebars", price: "$79.99", badge: "Popular" },
+                {
+                  name: "Pro Carbon Handlebars",
+                  price: "$79.99",
+                  badge: "Popular",
+                },
                 { name: "Baja for RYDE", price: "$29.99", badge: "New" },
                 { name: "Full Titanium Kit", price: "$149.99", badge: "" },
                 { name: "Titanium Pedals", price: "$59.99", badge: "" },
@@ -235,15 +295,24 @@ export default function Index() {
                     <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
                       {product.name}
                     </h3>
-                    <p className="text-muted-foreground text-sm mb-4">Premium custom bike part</p>
+                    <p className="text-muted-foreground text-sm mb-4">
+                      Premium custom bike part
+                    </p>
                     <div className="flex items-center justify-between">
-                      <span className="text-2xl font-bold text-primary">{product.price}</span>
+                      <span className="text-2xl font-bold text-primary">
+                        {product.price}
+                      </span>
                       {product.name === "Custom Wheel Stickers" ? (
-                        <a href="/customizer" className="btn-primary py-2 px-4 text-sm font-bold hover:scale-105 transition-transform">
+                        <a
+                          href="/customizer"
+                          className="btn-primary py-2 px-4 text-sm font-bold hover:scale-105 transition-transform"
+                        >
                           Design
                         </a>
                       ) : (
-                        <button className="btn-primary py-2 px-4 text-sm font-bold hover:scale-105 transition-transform">Add</button>
+                        <button className="btn-primary py-2 px-4 text-sm font-bold hover:scale-105 transition-transform">
+                          Add
+                        </button>
                       )}
                     </div>
                   </div>
@@ -253,13 +322,21 @@ export default function Index() {
           </div>
         </section>
 
-        <section id="cta" className="w-full py-16 md:py-24 bg-slate-50 border-t-2 border-primary/20">
+        <section
+          id="cta"
+          className="w-full py-16 md:py-24 bg-slate-50 border-t-2 border-primary/20"
+        >
           <div className="container-section text-center">
-            <h2 className="mb-6" style={{ fontWeight: '300' }}>Ready to Upgrade Your Ride?</h2>
-            <p className="text-2xl text-muted-foreground max-w-3xl mx-auto mb-8" style={{ fontWeight: '300' }}>
-              RYDE CUSTOM's premium electric bike upgrades are built for speed, style, and personal
-              flair. Join thousands of riders who have transformed their bikes with our
-              premium custom parts.
+            <h2 className="mb-6" style={{ fontWeight: "300" }}>
+              Ready to Upgrade Your Ride?
+            </h2>
+            <p
+              className="text-2xl text-muted-foreground max-w-3xl mx-auto mb-8"
+              style={{ fontWeight: "300" }}
+            >
+              RYDE CUSTOM's premium electric bike upgrades are built for speed,
+              style, and personal flair. Join thousands of riders who have
+              transformed their bikes with our premium custom parts.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

@@ -39,9 +39,10 @@ export default function About() {
           <div
             className="absolute inset-0 z-0"
             style={{
-              backgroundImage: 'url(https://images.pexels.com/photos/733740/pexels-photo-733740.jpeg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
+              backgroundImage:
+                "url(https://images.pexels.com/photos/733740/pexels-photo-733740.jpeg)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
           >
             <div className="absolute inset-0 bg-black/50" />
@@ -50,9 +51,15 @@ export default function About() {
 
           <div className="container-section relative z-10">
             <div className="max-w-3xl">
-              <h1 className="text-white mb-6" style={{ fontWeight: '300' }}>About RYDE CUSTOM</h1>
-              <p className="text-2xl text-gray-100 leading-relaxed max-w-2xl" style={{ fontWeight: '300' }}>
-                We're building the future of custom electric bike parts—powered by AI, designed for style, and built to last.
+              <h1 className="text-white mb-6" style={{ fontWeight: "300" }}>
+                About RYDE CUSTOM
+              </h1>
+              <p
+                className="text-2xl text-gray-100 leading-relaxed max-w-2xl"
+                style={{ fontWeight: "300" }}
+              >
+                We're building the future of custom electric bike parts—powered
+                by AI, designed for style, and built to last.
               </p>
             </div>
           </div>
@@ -61,16 +68,29 @@ export default function About() {
         <section className="w-full py-16 md:py-24 bg-gradient-to-b from-background to-slate-50">
           <div className="container-section">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-5xl md:text-6xl font-light mb-6" style={{ fontWeight: '300' }}>Our Mission</h2>
-              <p className="text-2xl text-muted-foreground leading-relaxed mb-8" style={{ fontWeight: '300' }}>
-                At RYDE CUSTOM, we believe that electric bikes are more than just transportation—they're
-                an expression of identity and individuality. We empower riders to customize and
-                personalize their bikes exactly the way they want them.
+              <h2
+                className="text-5xl md:text-6xl font-light mb-6"
+                style={{ fontWeight: "300" }}
+              >
+                Our Mission
+              </h2>
+              <p
+                className="text-2xl text-muted-foreground leading-relaxed mb-8"
+                style={{ fontWeight: "300" }}
+              >
+                At RYDE CUSTOM, we believe that electric bikes are more than
+                just transportation—they're an expression of identity and
+                individuality. We empower riders to customize and personalize
+                their bikes exactly the way they want them.
               </p>
-              <p className="text-2xl text-muted-foreground leading-relaxed" style={{ fontWeight: '300' }}>
-                With our AI-powered design tools and seamless integration with Printify and
-                Shopify, we make it effortless to create, customize, and order premium bike
-                parts—from glow kits to carbon fiber upgrades to custom license plates.
+              <p
+                className="text-2xl text-muted-foreground leading-relaxed"
+                style={{ fontWeight: "300" }}
+              >
+                With our AI-powered design tools and seamless integration with
+                Printify and Shopify, we make it effortless to create,
+                customize, and order premium bike parts—from glow kits to carbon
+                fiber upgrades to custom license plates.
               </p>
             </div>
           </div>
@@ -78,19 +98,29 @@ export default function About() {
 
         <section className="w-full py-16 md:py-24 bg-slate-50 border-y-2 border-primary/20">
           <div className="container-section">
-            <h2 className="text-5xl md:text-6xl font-light mb-12 text-center" style={{ fontWeight: '300' }}>Our Values</h2>
+            <h2
+              className="text-5xl md:text-6xl font-light mb-12 text-center"
+              style={{ fontWeight: "300" }}
+            >
+              Our Values
+            </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {VALUES.map((value, index) => {
                 const Icon = value.icon;
                 return (
-                  <div key={index} className="group p-8 bg-white rounded-xl border-2 border-border hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/20">
+                  <div
+                    key={index}
+                    className="group p-8 bg-white rounded-xl border-2 border-border hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/20"
+                  >
                     <div className="flex justify-center mb-4">
                       <div className="p-4 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
                         <Icon className="w-6 h-6 text-primary" />
                       </div>
                     </div>
-                    <h3 className="font-bold text-lg mb-3 text-center text-foreground group-hover:text-primary transition-colors">{value.title}</h3>
+                    <h3 className="font-bold text-lg mb-3 text-center text-foreground group-hover:text-primary transition-colors">
+                      {value.title}
+                    </h3>
                     <p className="text-muted-foreground leading-relaxed text-center text-sm">
                       {value.description}
                     </p>
@@ -104,50 +134,72 @@ export default function About() {
         <section className="w-full py-16 md:py-24 bg-gradient-to-b from-white to-slate-50">
           <div className="container-section">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-5xl md:text-6xl font-light mb-6" style={{ fontWeight: '300' }}>The RYDE Stack</h2>
-              <p className="text-2xl text-muted-foreground mb-12 leading-relaxed" style={{ fontWeight: '300' }}>
-                Behind every custom creation is a powerful technology stack designed to deliver
-                the best experience:
+              <h2
+                className="text-5xl md:text-6xl font-light mb-6"
+                style={{ fontWeight: "300" }}
+              >
+                The RYDE Stack
+              </h2>
+              <p
+                className="text-2xl text-muted-foreground mb-12 leading-relaxed"
+                style={{ fontWeight: "300" }}
+              >
+                Behind every custom creation is a powerful technology stack
+                designed to deliver the best experience:
               </p>
 
               <div className="space-y-6">
                 <div className="group p-8 bg-white rounded-xl border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/20">
-                  <h3 className="font-bold text-xl mb-3 text-foreground group-hover:text-primary transition-colors">🛒 Shopify</h3>
+                  <h3 className="font-bold text-xl mb-3 text-foreground group-hover:text-primary transition-colors">
+                    🛒 Shopify
+                  </h3>
                   <p className="text-muted-foreground text-sm">
-                    Our e-commerce backbone. Shopify powers our product catalog, inventory
-                    management, and secure checkout experience.
+                    Our e-commerce backbone. Shopify powers our product catalog,
+                    inventory management, and secure checkout experience.
                   </p>
                 </div>
 
                 <div className="group p-8 bg-white rounded-xl border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/20">
-                  <h3 className="font-bold text-xl mb-3 text-foreground group-hover:text-primary transition-colors">🏭 Printify</h3>
+                  <h3 className="font-bold text-xl mb-3 text-foreground group-hover:text-primary transition-colors">
+                    🏭 Printify
+                  </h3>
                   <p className="text-muted-foreground text-sm">
-                    Print-on-demand fulfillment partner. Printify handles production, quality
-                    assurance, and direct shipping—zero inventory waste.
+                    Print-on-demand fulfillment partner. Printify handles
+                    production, quality assurance, and direct shipping—zero
+                    inventory waste.
                   </p>
                 </div>
 
                 <div className="group p-8 bg-white rounded-xl border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/20">
-                  <h3 className="font-bold text-xl mb-3 text-foreground group-hover:text-primary transition-colors">🧠 Claude (Anthropic)</h3>
+                  <h3 className="font-bold text-xl mb-3 text-foreground group-hover:text-primary transition-colors">
+                    🧠 Claude (Anthropic)
+                  </h3>
                   <p className="text-muted-foreground text-sm">
-                    Our AI agent. RYDE AI helps customers brainstorm designs, answer product
-                    questions, and recommend perfect upgrades for their bikes.
+                    Our AI agent. RYDE AI helps customers brainstorm designs,
+                    answer product questions, and recommend perfect upgrades for
+                    their bikes.
                   </p>
                 </div>
 
                 <div className="group p-8 bg-white rounded-xl border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/20">
-                  <h3 className="font-bold text-xl mb-3 text-foreground group-hover:text-primary transition-colors">💳 Stripe</h3>
+                  <h3 className="font-bold text-xl mb-3 text-foreground group-hover:text-primary transition-colors">
+                    💳 Stripe
+                  </h3>
                   <p className="text-muted-foreground text-sm">
-                    Advanced payment processing for specialized flows, coaching calls, and
-                    custom orders outside the standard Shopify checkout.
+                    Advanced payment processing for specialized flows, coaching
+                    calls, and custom orders outside the standard Shopify
+                    checkout.
                   </p>
                 </div>
 
                 <div className="group p-8 bg-white rounded-xl border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/20">
-                  <h3 className="font-bold text-xl mb-3 text-foreground group-hover:text-primary transition-colors">🎨 Builder.io</h3>
+                  <h3 className="font-bold text-xl mb-3 text-foreground group-hover:text-primary transition-colors">
+                    🎨 Builder.io
+                  </h3>
                   <p className="text-muted-foreground text-sm">
-                    Frontend control and visual management of our website. Builder.io lets us
-                    rapidly iterate on design and content without redeploying.
+                    Frontend control and visual management of our website.
+                    Builder.io lets us rapidly iterate on design and content
+                    without redeploying.
                   </p>
                 </div>
               </div>
@@ -158,35 +210,51 @@ export default function About() {
         <section className="w-full py-16 md:py-24 bg-slate-50 border-y-2 border-primary/20">
           <div className="container-section">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-5xl md:text-6xl font-light mb-6" style={{ fontWeight: '300' }}>Why RYDE CUSTOM?</h2>
+              <h2
+                className="text-5xl md:text-6xl font-light mb-6"
+                style={{ fontWeight: "300" }}
+              >
+                Why RYDE CUSTOM?
+              </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="group p-6 bg-white rounded-xl border-2 border-border hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/20">
-                  <h3 className="font-bold text-lg mb-3 text-foreground group-hover:text-primary transition-colors">No Inventory Risk</h3>
+                  <h3 className="font-bold text-lg mb-3 text-foreground group-hover:text-primary transition-colors">
+                    No Inventory Risk
+                  </h3>
                   <p className="text-muted-foreground text-sm">
-                    Print-on-demand means we only produce what's ordered. Zero dead stock, zero
-                    waste.
+                    Print-on-demand means we only produce what's ordered. Zero
+                    dead stock, zero waste.
                   </p>
                 </div>
 
                 <div className="group p-6 bg-white rounded-xl border-2 border-border hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/20">
-                  <h3 className="font-bold text-lg mb-3 text-foreground group-hover:text-primary transition-colors">Lightning-Fast Design</h3>
+                  <h3 className="font-bold text-lg mb-3 text-foreground group-hover:text-primary transition-colors">
+                    Lightning-Fast Design
+                  </h3>
                   <p className="text-muted-foreground text-sm">
-                    Our AI agent guides you through the design process in minutes, not days.
+                    Our AI agent guides you through the design process in
+                    minutes, not days.
                   </p>
                 </div>
 
                 <div className="group p-6 bg-white rounded-xl border-2 border-border hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/20">
-                  <h3 className="font-bold text-lg mb-3 text-foreground group-hover:text-primary transition-colors">Premium Quality</h3>
+                  <h3 className="font-bold text-lg mb-3 text-foreground group-hover:text-primary transition-colors">
+                    Premium Quality
+                  </h3>
                   <p className="text-muted-foreground text-sm">
-                    Every product is carefully crafted and quality-tested before shipping to you.
+                    Every product is carefully crafted and quality-tested before
+                    shipping to you.
                   </p>
                 </div>
 
                 <div className="group p-6 bg-white rounded-xl border-2 border-border hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/20">
-                  <h3 className="font-bold text-lg mb-3 text-foreground group-hover:text-primary transition-colors">Seamless Experience</h3>
+                  <h3 className="font-bold text-lg mb-3 text-foreground group-hover:text-primary transition-colors">
+                    Seamless Experience
+                  </h3>
                   <p className="text-muted-foreground text-sm">
-                    From design to checkout to fulfillment—everything integrates perfectly.
+                    From design to checkout to fulfillment—everything integrates
+                    perfectly.
                   </p>
                 </div>
               </div>
@@ -197,13 +265,22 @@ export default function About() {
         <section className="w-full bg-slate-50 py-16 md:py-20 border-y border-border">
           <div className="container-section">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-4xl md:text-5xl font-light mb-4" style={{ fontWeight: '300' }}>
+              <h2
+                className="text-4xl md:text-5xl font-light mb-4"
+                style={{ fontWeight: "300" }}
+              >
                 Ready to Customize Your Ride?
               </h2>
-              <p className="text-xl text-muted-foreground mb-8" style={{ fontWeight: '300' }}>
+              <p
+                className="text-xl text-muted-foreground mb-8"
+                style={{ fontWeight: "300" }}
+              >
                 Join the RYDE CUSTOM community and create something truly unique
               </p>
-              <a href="/design" className="inline-flex items-center gap-2 btn-primary px-8 py-4 text-lg font-bold">
+              <a
+                href="/design"
+                className="inline-flex items-center gap-2 btn-primary px-8 py-4 text-lg font-bold"
+              >
                 Start Designing <ArrowRight className="w-5 h-5" />
               </a>
             </div>

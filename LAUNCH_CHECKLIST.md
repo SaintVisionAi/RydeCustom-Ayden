@@ -5,6 +5,7 @@ Your custom bike parts shop infrastructure is now complete! Follow this checklis
 ## ✅ Infrastructure Complete
 
 ### Frontend Pages ✓
+
 - [x] `/` - Home page with hero, categories, products, video, and CTA
 - [x] `/products` - Full product catalog with filtering
 - [x] `/design` - Design page with design process explanation and CTA
@@ -13,11 +14,13 @@ Your custom bike parts shop infrastructure is now complete! Follow this checklis
 - [x] `/about` - Company story, values, and tech stack explanation
 
 ### Navigation ✓
+
 - [x] Updated Header with proper routing to all pages
 - [x] Mobile-responsive navigation menu
 - [x] Active page highlighting
 
 ### Integrations ✓
+
 - [x] **Anthropic Claude SDK** - AI Agent for product recommendations and design help
 - [x] **Shopify Components** - Buy Button component for product embedding
 - [x] **Printify Components** - Product embed component for print-on-demand items
@@ -25,6 +28,7 @@ Your custom bike parts shop infrastructure is now complete! Follow this checklis
 - [x] **AI Chat** - Floating chat widget with streaming support
 
 ### Features ✓
+
 - [x] AI-powered design assistance via Claude
 - [x] Real-time sticker customizer with preview
 - [x] Product browsing and filtering
@@ -37,6 +41,7 @@ Your custom bike parts shop infrastructure is now complete! Follow this checklis
 ## 📋 NEXT STEPS - DO THIS NOW
 
 ### Step 1: Configure Environment Variables
+
 Copy `.env.example` to `.env.local` and fill in your credentials:
 
 ```bash
@@ -44,6 +49,7 @@ cp .env.example .env.local
 ```
 
 **Required for launch:**
+
 ```
 VITE_ANTHROPIC_API_KEY=sk-ant-...          # Claude API key
 VITE_SHOPIFY_STORE_ID=your-store.myshopify.com
@@ -57,6 +63,7 @@ VITE_PRINTIFY_STORE_ID=...
 ### Step 2: Create Products in Shopify & Printify
 
 **In Printify:**
+
 1. Go to printify.com and log in
 2. Create products for your catalog:
    - Custom stickers (vinyl, 3D, specialty)
@@ -67,6 +74,7 @@ VITE_PRINTIFY_STORE_ID=...
 3. Products auto-sync to Shopify
 
 **In Shopify:**
+
 1. Verify products synced from Printify
 2. Add product images and detailed descriptions
 3. Set pricing (Printify adds base cost, you set markup)
@@ -82,6 +90,7 @@ pnpm dev
 ```
 
 **Verify:**
+
 - [ ] Home page loads with all sections
 - [ ] Navigation links work
 - [ ] AI Chat responds to messages
@@ -90,12 +99,14 @@ pnpm dev
 - [ ] All routes load correctly
 
 **Check browser console:**
+
 - Should see "🚀 EMOTO Integration Status" with ✅ marks
 - No error messages about missing API keys
 
 ### Step 4: Get Stripe API Keys (Optional but Recommended)
 
 Visit [stripe.com](https://stripe.com):
+
 1. Create account or sign in
 2. Go to Developers → API Keys
 3. Copy Publishable Key and Secret Key
@@ -108,6 +119,7 @@ Visit [stripe.com](https://stripe.com):
 ### Step 5: Set Up Domain & SSL
 
 Choose where to deploy:
+
 - **Netlify** (recommended) - Auto builds on git push
 - **Vercel** - Similar to Netlify
 - **Custom Server** - Run with `pnpm start`
@@ -117,6 +129,7 @@ See EMOTO_SETUP_GUIDE.md → Deployment section for detailed instructions
 ### Step 6: Deploy to Production
 
 **With Netlify:**
+
 ```bash
 # Push to GitHub
 git push origin main
@@ -126,6 +139,7 @@ git push origin main
 ```
 
 **With Vercel:**
+
 ```bash
 # Connect your repo at vercel.com
 # Vercel auto-deploys on push
@@ -152,6 +166,7 @@ git push origin main
 ### Step 8: Set Up Analytics (Optional)
 
 Consider adding:
+
 - Google Analytics for traffic tracking
 - Shopify analytics for sales
 - Printify dashboard for fulfillment tracking
@@ -161,6 +176,7 @@ Consider adding:
 ## 🎯 Key Features You Have
 
 ### AI Agent (EMOTO AI)
+
 - Accessible from customizer page
 - Can help with:
   - Design suggestions
@@ -170,17 +186,20 @@ Consider adding:
   - Technical questions
 
 ### Custom Sticker Designer
+
 - Interactive preview
 - Color, size, shape, border options
 - Real-time updates
 - Add to cart integration
 
 ### Product Catalog
+
 - Filterable by category
 - Direct links from all pages
 - Ready for Shopify product cards
 
 ### Automated Fulfillment
+
 - Printify auto-fulfills Shopify orders
 - No inventory management needed
 - Direct to customer shipping
@@ -243,12 +262,14 @@ Before launching to production:
 ## 💪 Optimization Tips
 
 ### For Better Performance:
+
 1. Optimize images before uploading to Shopify
 2. Enable Shopify CDN for product images
 3. Use Netlify/Vercel edge caching
 4. Monitor API calls to Anthropic (track token usage)
 
 ### For Better Conversions:
+
 1. Add customer testimonials
 2. Set up email capture for notifications
 3. Create limited-time offers
@@ -256,6 +277,7 @@ Before launching to production:
 5. Use social proof (reviews, ratings)
 
 ### For Better Search Ranking:
+
 1. Add meta descriptions to pages
 2. Use structured data/schema markup
 3. Set up sitemap.xml
@@ -275,6 +297,7 @@ Before launching to production:
 6. **Look at network tab** for failed API calls
 
 **Common Issues:**
+
 - Missing API key → No AI responses or products
 - Wrong Shopify store ID → Products don't load
 - Printify not connected → Fulfillment not automated
@@ -298,6 +321,7 @@ Before launching to production:
 You're all set to launch EMOTO! Follow the **NEXT STEPS** above and you'll be live within hours.
 
 **TL;DR:**
+
 1. Fill in `.env.local` with API keys
 2. Create products in Printify/Shopify
 3. Test locally (`pnpm dev`)

@@ -74,7 +74,8 @@ export default function AIChat({
             <MessageSquare className="w-12 h-12 text-muted-foreground/30 mb-3" />
             <h4 className="font-bold text-foreground mb-2">Hi! I'm EMOTO AI</h4>
             <p className="text-sm text-muted-foreground mb-4">
-              I can help you design custom bike parts, answer questions, and recommend products.
+              I can help you design custom bike parts, answer questions, and
+              recommend products.
             </p>
 
             <div className="space-y-2 w-full">
@@ -88,9 +89,12 @@ export default function AIChat({
                     setInputValue(question);
                     setTimeout(() => {
                       const form = document.querySelector(
-                        "[data-chat-form]"
+                        "[data-chat-form]",
                       ) as HTMLFormElement;
-                      if (form) form.dispatchEvent(new Event("submit", { bubbles: true }));
+                      if (form)
+                        form.dispatchEvent(
+                          new Event("submit", { bubbles: true }),
+                        );
                     }, 0);
                   }}
                   className="w-full text-left text-xs p-2 rounded-lg bg-secondary/10 hover:bg-secondary/20 transition-colors text-foreground/80 hover:text-foreground"

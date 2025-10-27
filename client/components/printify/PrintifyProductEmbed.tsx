@@ -14,9 +14,13 @@ export default function PrintifyProductEmbed({
   return (
     <div className={`printify-embed-container ${className}`}>
       <div className="bg-white rounded-lg border border-border overflow-hidden hover:shadow-lg transition-shadow duration-300">
-        {title && <h3 className="text-lg font-bold p-4 bg-slate-50">{title}</h3>}
+        {title && (
+          <h3 className="text-lg font-bold p-4 bg-slate-50">{title}</h3>
+        )}
 
-        {description && <p className="text-muted-foreground p-4">{description}</p>}
+        {description && (
+          <p className="text-muted-foreground p-4">{description}</p>
+        )}
 
         <div
           id={`printify-product-${productId}`}
@@ -36,10 +40,13 @@ export default function PrintifyProductEmbed({
             src="https://embed.printify.com/embed.js"
             onLoad={() => {
               if (window.PrintifyEmbed) {
-                window.PrintifyEmbed.render(document.getElementById(`printify-product-${productId}`), {
-                  storeId: process.env.REACT_APP_PRINTIFY_STORE_ID,
-                  productId: productId,
-                });
+                window.PrintifyEmbed.render(
+                  document.getElementById(`printify-product-${productId}`),
+                  {
+                    storeId: process.env.REACT_APP_PRINTIFY_STORE_ID,
+                    productId: productId,
+                  },
+                );
               }
             }}
           />

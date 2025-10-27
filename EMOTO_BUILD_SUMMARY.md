@@ -7,34 +7,40 @@ A complete, production-ready custom electric bike parts shop with AI-powered des
 ## 📦 What You Get
 
 ### Pages & Routes
-| Page | Route | Purpose |
-|------|-------|---------|
-| Home | `/` | Hero, featured products, video, categories, CTA |
-| Products | `/products` | Filterable product catalog with 6+ sample products |
-| Design | `/design` | Design process explainer, benefits, CTA to customizer |
-| Customizer | `/customizer` | Interactive sticker designer + AI chat |
-| Shop | `/shop` | Shopping interface, fulfillment explanation |
-| About | `/about` | Company mission, values, tech stack |
+
+| Page       | Route         | Purpose                                               |
+| ---------- | ------------- | ----------------------------------------------------- |
+| Home       | `/`           | Hero, featured products, video, categories, CTA       |
+| Products   | `/products`   | Filterable product catalog with 6+ sample products    |
+| Design     | `/design`     | Design process explainer, benefits, CTA to customizer |
+| Customizer | `/customizer` | Interactive sticker designer + AI chat                |
+| Shop       | `/shop`       | Shopping interface, fulfillment explanation           |
+| About      | `/about`      | Company mission, values, tech stack                   |
 
 ### Components Built
 
 #### Navigation
+
 - **Header.tsx** - Sticky header with active page highlighting, mobile menu, responsive design
 
 #### AI Features
+
 - **AIChat.tsx** - Floating chat widget with streaming Claude responses
 - **use-claude-chat.ts** - React hook for managing chat state and API calls
 - **anthropic.ts** - Claude SDK integration with system prompts
 
 #### Shopping
+
 - **Cart.tsx** - Local cart management with persistent storage, item count badge
 - **ShopifyBuyButton.tsx** - Component for embedding Shopify products
 - **PrintifyProductEmbed.tsx** - Component for embedding print-on-demand products
 
 #### Customizer
+
 - **StickerCustomizer.tsx** - Enhanced with AI chat integration, real-time preview
 
 ### Configuration & Setup
+
 - **.env.example** - Template with all required environment variables
 - **integrations.ts** - Centralized service configuration
 - **EMOTO_SETUP_GUIDE.md** - 400+ line detailed integration guide
@@ -45,8 +51,9 @@ A complete, production-ready custom electric bike parts shop with AI-powered des
 ## 🔌 Integrations Ready
 
 ### ✅ Anthropic Claude API
+
 - **Status**: Fully integrated and tested
-- **Files**: 
+- **Files**:
   - `client/lib/anthropic.ts` - SDK setup
   - `client/hooks/use-claude-chat.ts` - React hook
   - `client/components/AIChat.tsx` - Chat widget
@@ -57,6 +64,7 @@ A complete, production-ready custom electric bike parts shop with AI-powered des
   - Suggested questions on chat open
 
 ### ✅ Shopify
+
 - **Status**: Components ready for API integration
 - **Files**:
   - `client/components/shopify/ShopifyBuyButton.tsx`
@@ -68,6 +76,7 @@ A complete, production-ready custom electric bike parts shop with AI-powered des
   - Checkout handling
 
 ### ✅ Printify
+
 - **Status**: Components ready for order fulfillment
 - **Files**:
   - `client/components/printify/PrintifyProductEmbed.tsx`
@@ -79,6 +88,7 @@ A complete, production-ready custom electric bike parts shop with AI-powered des
   - No inventory management
 
 ### ✅ Stripe (Optional)
+
 - **Status**: Configuration ready
 - **For**: Advanced payment flows, upsells, custom orders
 - **Setup**: Public and secret keys
@@ -88,12 +98,14 @@ A complete, production-ready custom electric bike parts shop with AI-powered des
 ## 🎨 Design System
 
 ### Colors
+
 - **Primary**: Purple (`#6D28D9`) - brand identity
 - **Secondary**: Blue/Cyan - accent color
 - **Background**: Light slate
 - **Text**: Dark gray/black with proper contrast
 
 ### Components
+
 - Pre-built Radix UI component library
 - TailwindCSS 3 with custom config
 - Responsive grid system
@@ -101,6 +113,7 @@ A complete, production-ready custom electric bike parts shop with AI-powered des
 - Dark mode ready
 
 ### Responsive Design
+
 - Mobile-first approach
 - Breakpoints: sm (640px), md (768px), lg (1024px)
 - Touch-friendly buttons and inputs
@@ -111,12 +124,14 @@ A complete, production-ready custom electric bike parts shop with AI-powered des
 ## 📊 Product Categories
 
 Pre-configured categories in `lib/integrations.ts`:
+
 - **Performance Bike Parts** - High-performance components
 - **Carbon Fiber Upgrades** - Lightweight durability
 - **Custom Upgrades** - Glow Kits, Speed Mods, etc.
 - **Stickers & Decals** - Vinyl and custom designs
 
 Sample products included:
+
 - Glow Kit ($49.99)
 - Speed Mod ($89.99)
 - Carbon Seat Post ($159.99)
@@ -129,6 +144,7 @@ Sample products included:
 ## 🤖 AI Agent Capabilities
 
 The EMOTO AI Agent can:
+
 - ✅ Suggest custom designs based on user preferences
 - ✅ Recommend product bundles and upgrades
 - ✅ Answer questions about materials and durability
@@ -144,6 +160,7 @@ The EMOTO AI Agent can:
 ## 🛒 Shopping Experience
 
 ### User Journey
+
 1. Browse home page or products page
 2. Chat with EMOTO AI for recommendations
 3. Design custom sticker in customizer
@@ -153,6 +170,7 @@ The EMOTO AI Agent can:
 7. Printify auto-fulfills and ships
 
 ### Cart Features
+
 - Persistent storage (localStorage)
 - Quantity management
 - Item count badge in header
@@ -165,6 +183,7 @@ The EMOTO AI Agent can:
 ## 📱 Mobile & Desktop
 
 ### Mobile Optimizations
+
 - Hamburger menu with proper spacing
 - Touch-friendly buttons (min 44px)
 - Optimized font sizes
@@ -173,6 +192,7 @@ The EMOTO AI Agent can:
 - Bottom sheet for cart
 
 ### Desktop Features
+
 - Full navigation visible
 - Multi-column grids
 - Hover effects
@@ -185,6 +205,7 @@ The EMOTO AI Agent can:
 ## 🔐 Security Considerations
 
 ### What's Handled Securely
+
 - Payment processing through Shopify (PCI compliant)
 - API keys in environment variables (never in code)
 - HTTPS enforcement recommended
@@ -192,6 +213,7 @@ The EMOTO AI Agent can:
 - Stripe integration supports test mode for dev
 
 ### What You Need to Configure
+
 - SSL/TLS certificate for domain
 - Secure environment variables on hosting platform
 - CORS configuration for APIs
@@ -202,6 +224,7 @@ The EMOTO AI Agent can:
 ## ⚡ Performance Features
 
 ### Optimized For
+
 - Fast page loads (Lighthouse ready)
 - Streaming AI responses (no waiting for full response)
 - Lazy loading for images
@@ -210,6 +233,7 @@ The EMOTO AI Agent can:
 - Minimal bundle size
 
 ### Monitoring
+
 - Integration status logged to console
 - API error tracking
 - Network request visibility
@@ -251,6 +275,7 @@ The EMOTO AI Agent can:
    - Printify
 
 2. **Start dev server**
+
    ```bash
    pnpm dev
    ```
@@ -266,6 +291,7 @@ The EMOTO AI Agent can:
 ## 📈 Growth Opportunities
 
 Once launched, consider:
+
 - Email capture for newsletters
 - Social proof (customer reviews)
 - Limited-time offers
@@ -281,6 +307,7 @@ Once launched, consider:
 ## 💡 Architecture Decisions
 
 ### Why This Stack?
+
 - **React**: Fast, component-based UI
 - **React Router**: Client-side routing without page reloads
 - **TailwindCSS**: Rapid UI development with utility classes
@@ -289,6 +316,7 @@ Once launched, consider:
 - **Printify**: Print-on-demand without inventory hassle
 
 ### Why These Patterns?
+
 - **Component composition**: Reusable, maintainable code
 - **Local cart storage**: Faster than API for MVP
 - **Streaming AI**: Better UX (responses appear instantly)
@@ -300,6 +328,7 @@ Once launched, consider:
 ## 🎯 What's Ready vs. What Needs Setup
 
 ### ✅ Ready to Use
+
 - All pages and routing
 - AI chat integration
 - Cart system
@@ -309,12 +338,14 @@ Once launched, consider:
 - Sticker customizer
 
 ### 🔧 Needs Credentials (in .env.local)
+
 - Anthropic API key
 - Shopify store access
 - Printify API connection
 - Stripe (optional)
 
 ### 📝 Needs Data
+
 - Product images
 - Product descriptions
 - Detailed pricing

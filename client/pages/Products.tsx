@@ -98,9 +98,13 @@ function ProductCard({ product }: { product: Product }) {
         <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
           {product.name}
         </h3>
-        <p className="text-muted-foreground text-sm mb-4">{product.description}</p>
+        <p className="text-muted-foreground text-sm mb-4">
+          {product.description}
+        </p>
         <div className="flex items-center justify-between">
-          <span className="text-2xl font-bold text-primary">${product.price}</span>
+          <span className="text-2xl font-bold text-primary">
+            ${product.price}
+          </span>
           <button className="btn-primary py-2 px-4 text-sm font-bold hover:scale-105 transition-transform flex items-center gap-2">
             <ArrowRight className="w-4 h-4" /> Add
           </button>
@@ -127,9 +131,10 @@ export default function Products() {
           <div
             className="absolute inset-0 z-0"
             style={{
-              backgroundImage: 'url(https://images.pexels.com/photos/33503476/pexels-photo-33503476.jpeg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
+              backgroundImage:
+                "url(https://images.pexels.com/photos/33503476/pexels-photo-33503476.jpeg)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
           >
             <div className="absolute inset-0 bg-black/50" />
@@ -138,9 +143,15 @@ export default function Products() {
 
           <div className="container-section relative z-10">
             <div className="max-w-2xl">
-              <h1 className="text-white mb-4" style={{ fontWeight: '300' }}>Our Products</h1>
-              <p className="text-2xl text-gray-100" style={{ fontWeight: '300' }}>
-                Premium custom parts, upgrades, and accessories for your electric bike
+              <h1 className="text-white mb-4" style={{ fontWeight: "300" }}>
+                Our Products
+              </h1>
+              <p
+                className="text-2xl text-gray-100"
+                style={{ fontWeight: "300" }}
+              >
+                Premium custom parts, upgrades, and accessories for your
+                electric bike
               </p>
             </div>
           </div>
@@ -186,10 +197,16 @@ export default function Products() {
         <section className="w-full bg-slate-50 py-16 md:py-20 border-y-2 border-primary/20">
           <div className="container-section">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-4xl md:text-5xl font-light mb-4" style={{ fontWeight: '300' }}>
+              <h2
+                className="text-4xl md:text-5xl font-light mb-4"
+                style={{ fontWeight: "300" }}
+              >
                 Didn't find what you need?
               </h2>
-              <p className="text-2xl text-muted-foreground mb-8" style={{ fontWeight: '300' }}>
+              <p
+                className="text-2xl text-muted-foreground mb-8"
+                style={{ fontWeight: "300" }}
+              >
                 Design your own custom parts with our AI-powered customizer
               </p>
               <a

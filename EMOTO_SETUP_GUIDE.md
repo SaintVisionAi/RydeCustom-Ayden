@@ -54,6 +54,7 @@ The app will run at `http://localhost:8080`
 **Purpose**: Powers the EMOTO AI Agent for design assistance and product recommendations
 
 **Steps**:
+
 1. Visit [console.anthropic.com](https://console.anthropic.com/)
 2. Create an account or sign in
 3. Navigate to API Keys section
@@ -85,6 +86,7 @@ The app will run at `http://localhost:8080`
    ```
 
 **Integration Points**:
+
 - Homepage: Product showcase with Shopify Buy Buttons
 - `/products` page: Product catalog and filtering
 - `/shop` page: Main shopping interface
@@ -113,6 +115,7 @@ The app will run at `http://localhost:8080`
    ```
 
 **Product Examples**:
+
 - Custom stickers (vinyl, 3D, specialty)
 - Personalized license plates
 - Carbon fiber decals
@@ -136,6 +139,7 @@ The app will run at `http://localhost:8080`
    ```
 
 **Use Cases** (optional, Shopify handles primary checkout):
+
 - Custom bike branding services
 - Coaching call payments
 - PDF guide downloads
@@ -147,18 +151,19 @@ The app will run at `http://localhost:8080`
 
 ### Routes & Pages
 
-| Route | Purpose | Integration |
-|-------|---------|-------------|
-| `/` | Home | Product showcase, featured items |
-| `/products` | Product Catalog | Shopify products, filtering |
-| `/design` | Design CTA | Links to customizer |
-| `/customizer` | Custom Design Tool | AI chat, sticker customizer |
-| `/shop` | Shopping Interface | Shopify checkout |
-| `/about` | Company Info | EMOTO story, tech stack |
+| Route         | Purpose            | Integration                      |
+| ------------- | ------------------ | -------------------------------- |
+| `/`           | Home               | Product showcase, featured items |
+| `/products`   | Product Catalog    | Shopify products, filtering      |
+| `/design`     | Design CTA         | Links to customizer              |
+| `/customizer` | Custom Design Tool | AI chat, sticker customizer      |
+| `/shop`       | Shopping Interface | Shopify checkout                 |
+| `/about`      | Company Info       | EMOTO story, tech stack          |
 
 ### Key Components
 
 #### AIChat Component
+
 - **File**: `client/components/AIChat.tsx`
 - **Purpose**: Floating chat widget for EMOTO AI Agent
 - **Features**:
@@ -168,6 +173,7 @@ The app will run at `http://localhost:8080`
   - Mobile and desktop responsive
 
 #### Customizer Page
+
 - **File**: `client/pages/StickerCustomizer.tsx`
 - **Purpose**: Interactive sticker customization
 - **Features**:
@@ -177,6 +183,7 @@ The app will run at `http://localhost:8080`
   - Add to cart functionality
 
 #### Shopify Components
+
 - **File**: `client/components/shopify/ShopifyBuyButton.tsx`
 - **Purpose**: Embed Shopify products
 - **Usage**:
@@ -185,6 +192,7 @@ The app will run at `http://localhost:8080`
   ```
 
 #### Printify Components
+
 - **File**: `client/components/printify/PrintifyProductEmbed.tsx`
 - **Purpose**: Display print-on-demand products
 - **Usage**:
@@ -208,6 +216,7 @@ The app will run at `http://localhost:8080`
 ### 1. AI-Powered Design (Claude)
 
 The EMOTO AI Agent helps customers:
+
 - Brainstorm custom designs
 - Get product recommendations
 - Understand material options
@@ -219,6 +228,7 @@ The EMOTO AI Agent helps customers:
 ### 2. Custom Product Creation
 
 Workflow:
+
 1. User describes their vision to EMOTO AI
 2. AI provides design suggestions
 3. User customizes in the sticker designer
@@ -228,12 +238,14 @@ Workflow:
 ### 3. Print-on-Demand Fulfillment
 
 When a customer orders:
+
 1. Order created in Shopify
 2. Automatically sent to Printify
 3. Printify prints and ships directly to customer
 4. Tracking updates provided
 
 **Benefits**:
+
 - No upfront inventory costs
 - Fast production (typically 5-7 days)
 - High quality assurance
@@ -316,6 +328,7 @@ curl -X POST https://api.anthropic.com/v1/messages \
 ### Browser Console
 
 Check the browser console (F12) for:
+
 - API call errors
 - Failed environment variables
 - Missing API keys
@@ -323,6 +336,7 @@ Check the browser console (F12) for:
 ### Network Tab
 
 Monitor API requests to:
+
 - `api.anthropic.com` - Claude API
 - `*.shopifycdn.com` - Shopify products
 - `*.printify.com` - Printify embeds
@@ -354,6 +368,7 @@ NODE_ENV=                      # development or production
 ### Chat Not Responding
 
 **Solution**:
+
 1. Verify `VITE_ANTHROPIC_API_KEY` is set
 2. Check Network tab for API errors
 3. Verify API key has remaining quota
@@ -361,6 +376,7 @@ NODE_ENV=                      # development or production
 ### Shopify Products Not Loading
 
 **Solution**:
+
 1. Verify store ID matches your domain
 2. Confirm products are published in Shopify
 3. Check access token has `read_products` scope
@@ -368,6 +384,7 @@ NODE_ENV=                      # development or production
 ### Printify Integration Not Working
 
 **Solution**:
+
 1. Verify Printify is installed in your Shopify store
 2. Confirm API key is valid
 3. Check that products are created in Printify

@@ -45,7 +45,7 @@ export async function callClaudeAPI(
   options?: {
     maxTokens?: number;
     temperature?: number;
-  }
+  },
 ): Promise<string> {
   if (!ANTHROPIC_API_KEY) {
     throw new Error("VITE_ANTHROPIC_API_KEY environment variable is not set");
@@ -71,7 +71,7 @@ export async function callClaudeAPI(
     if (!response.ok) {
       const errorData = await response.json();
       throw new Error(
-        `Anthropic API error: ${response.status} ${JSON.stringify(errorData)}`
+        `Anthropic API error: ${response.status} ${JSON.stringify(errorData)}`,
       );
     }
 
@@ -99,7 +99,7 @@ export async function streamClaudeResponse(
   options?: {
     maxTokens?: number;
     temperature?: number;
-  }
+  },
 ): Promise<void> {
   if (!ANTHROPIC_API_KEY) {
     throw new Error("VITE_ANTHROPIC_API_KEY environment variable is not set");
@@ -126,7 +126,7 @@ export async function streamClaudeResponse(
     if (!response.ok) {
       const errorData = await response.json();
       throw new Error(
-        `Anthropic API error: ${response.status} ${JSON.stringify(errorData)}`
+        `Anthropic API error: ${response.status} ${JSON.stringify(errorData)}`,
       );
     }
 

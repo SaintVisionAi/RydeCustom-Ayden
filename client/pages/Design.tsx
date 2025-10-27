@@ -36,8 +36,12 @@ function FeatureCard({ feature }: { feature: Feature }) {
       <div className="mb-4 inline-flex p-4 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
         <Icon className="w-6 h-6 text-primary" />
       </div>
-      <h3 className="font-bold text-lg mb-3 text-foreground group-hover:text-primary transition-colors">{feature.title}</h3>
-      <p className="text-muted-foreground leading-relaxed text-sm">{feature.description}</p>
+      <h3 className="font-bold text-lg mb-3 text-foreground group-hover:text-primary transition-colors">
+        {feature.title}
+      </h3>
+      <p className="text-muted-foreground leading-relaxed text-sm">
+        {feature.description}
+      </p>
     </div>
   );
 }
@@ -52,9 +56,10 @@ export default function Design() {
           <div
             className="absolute inset-0 z-0"
             style={{
-              backgroundImage: 'url(https://images.pexels.com/photos/733740/pexels-photo-733740.jpeg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
+              backgroundImage:
+                "url(https://images.pexels.com/photos/733740/pexels-photo-733740.jpeg)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
           >
             <div className="absolute inset-0 bg-black/50" />
@@ -69,19 +74,29 @@ export default function Design() {
                 </span>
               </div>
 
-              <h1 className="text-white mb-6" style={{ fontWeight: '300' }}>
+              <h1 className="text-white mb-6" style={{ fontWeight: "300" }}>
                 Create Your Perfect Custom Bike Parts
               </h1>
 
-              <p className="text-2xl text-gray-100 mb-8 leading-relaxed max-w-2xl" style={{ fontWeight: '300' }}>
-                Powered by AI, our design tool helps you create custom stickers, plates, and parts exactly as you imagine them.
+              <p
+                className="text-2xl text-gray-100 mb-8 leading-relaxed max-w-2xl"
+                style={{ fontWeight: "300" }}
+              >
+                Powered by AI, our design tool helps you create custom stickers,
+                plates, and parts exactly as you imagine them.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/customizer" className="btn-primary px-8 py-4 text-lg font-bold">
+                <a
+                  href="/customizer"
+                  className="btn-primary px-8 py-4 text-lg font-bold"
+                >
                   Start Customizing <ArrowRight className="w-5 h-5 ml-2" />
                 </a>
-                <a href="/products" className="btn-outline border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-bold">
+                <a
+                  href="/products"
+                  className="btn-outline border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-bold"
+                >
                   Browse Pre-Made Designs
                 </a>
               </div>
@@ -96,8 +111,16 @@ export default function Design() {
         <section className="w-full py-16 md:py-24 bg-gradient-to-b from-background to-slate-50">
           <div className="container-section">
             <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-light mb-4" style={{ fontWeight: '300' }}>How It Works</h2>
-              <p className="text-2xl text-muted-foreground" style={{ fontWeight: '300' }}>
+              <h2
+                className="text-4xl md:text-5xl font-light mb-4"
+                style={{ fontWeight: "300" }}
+              >
+                How It Works
+              </h2>
+              <p
+                className="text-2xl text-muted-foreground"
+                style={{ fontWeight: "300" }}
+              >
                 Three simple steps to create your custom design
               </p>
             </div>
@@ -109,9 +132,12 @@ export default function Design() {
                     <span className="text-2xl font-bold">1</span>
                   </div>
                 </div>
-                <h3 className="font-bold text-lg text-center mb-3 text-foreground group-hover:text-primary transition-colors">Describe Your Vision</h3>
+                <h3 className="font-bold text-lg text-center mb-3 text-foreground group-hover:text-primary transition-colors">
+                  Describe Your Vision
+                </h3>
                 <p className="text-muted-foreground text-center text-sm">
-                  Tell our AI what you want. Be as creative or specific as you like.
+                  Tell our AI what you want. Be as creative or specific as you
+                  like.
                 </p>
               </div>
 
@@ -121,9 +147,12 @@ export default function Design() {
                     <span className="text-2xl font-bold">2</span>
                   </div>
                 </div>
-                <h3 className="font-bold text-lg text-center mb-3 text-foreground group-hover:text-primary transition-colors">Customize & Refine</h3>
+                <h3 className="font-bold text-lg text-center mb-3 text-foreground group-hover:text-primary transition-colors">
+                  Customize & Refine
+                </h3>
                 <p className="text-muted-foreground text-center text-sm">
-                  Tweak colors, sizes, and styles with our intuitive design tool.
+                  Tweak colors, sizes, and styles with our intuitive design
+                  tool.
                 </p>
               </div>
 
@@ -133,9 +162,12 @@ export default function Design() {
                     <span className="text-2xl font-bold">3</span>
                   </div>
                 </div>
-                <h3 className="font-bold text-lg text-center mb-3 text-foreground group-hover:text-primary transition-colors">Order & Receive</h3>
+                <h3 className="font-bold text-lg text-center mb-3 text-foreground group-hover:text-primary transition-colors">
+                  Order & Receive
+                </h3>
                 <p className="text-muted-foreground text-center text-sm">
-                  Once happy, order your custom parts and we'll print and ship them.
+                  Once happy, order your custom parts and we'll print and ship
+                  them.
                 </p>
               </div>
             </div>
@@ -145,8 +177,16 @@ export default function Design() {
         <section className="w-full py-16 md:py-24 bg-slate-50 border-y border-border">
           <div className="container-section">
             <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-light mb-4" style={{ fontWeight: '300' }}>Why Choose RYDE CUSTOM?</h2>
-              <p className="text-2xl text-muted-foreground" style={{ fontWeight: '300' }}>
+              <h2
+                className="text-4xl md:text-5xl font-light mb-4"
+                style={{ fontWeight: "300" }}
+              >
+                Why Choose RYDE CUSTOM?
+              </h2>
+              <p
+                className="text-2xl text-muted-foreground"
+                style={{ fontWeight: "300" }}
+              >
                 The best custom bike parts experience, powered by AI
               </p>
             </div>
@@ -163,14 +203,23 @@ export default function Design() {
           <div className="container-section">
             <div className="max-w-4xl mx-auto">
               <div className="bg-white rounded-2xl border-2 border-primary/20 hover:border-primary/50 transition-all p-8 md:p-12">
-                <h2 className="text-3xl md:text-4xl font-light mb-4" style={{ fontWeight: '300' }}>
+                <h2
+                  className="text-3xl md:text-4xl font-light mb-4"
+                  style={{ fontWeight: "300" }}
+                >
                   Need Expert Advice?
                 </h2>
-                <p className="text-xl text-muted-foreground mb-6 max-w-2xl" style={{ fontWeight: '300' }}>
-                  Our AI agent can help you choose the right materials, suggest designs, and
-                  answer any questions about custom bike parts.
+                <p
+                  className="text-xl text-muted-foreground mb-6 max-w-2xl"
+                  style={{ fontWeight: "300" }}
+                >
+                  Our AI agent can help you choose the right materials, suggest
+                  designs, and answer any questions about custom bike parts.
                 </p>
-                <a href="/customizer" className="inline-flex items-center gap-2 btn-primary px-8 py-4 text-lg font-bold">
+                <a
+                  href="/customizer"
+                  className="inline-flex items-center gap-2 btn-primary px-8 py-4 text-lg font-bold"
+                >
                   Chat with RYDE AI <ArrowRight className="w-5 h-5" />
                 </a>
               </div>

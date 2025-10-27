@@ -23,47 +23,47 @@ export default function ShopifyBuyButton({
         onLoad={() => {
           if (window.ShopifyBuy) {
             window.ShopifyBuy.UI.onReady((client: any) => {
-              client.product
-                .fetchByHandle(productId)
-                .then((product: any) => {
-                  const ui = client.UI.create({
-                    type: "product",
-                    node: document.getElementById(`shopify-buy-button-${productId}`),
-                    options: {
-                      product: {
-                        variantId: variant === "all" ? "all" : "first",
-                        width: "100%",
-                        styles: {
-                          product: {
-                            "@media (min-width: 601px)": {
-                              maxWidth: "calc(25% - 20px)",
-                              marginLeft: "20px",
-                              marginBottom: "20px",
-                            },
-                          },
-                        },
-                      },
-                      cart: {
-                        contents: {
-                          cart: {
-                            hidden: true,
-                          },
-                        },
-                        styles: {
-                          button: {
-                            ":hover": {
-                              "background-color": "#1a1a1a",
-                            },
-                          },
-                          footer: {
-                            "background-color": "#ffffff",
+              client.product.fetchByHandle(productId).then((product: any) => {
+                const ui = client.UI.create({
+                  type: "product",
+                  node: document.getElementById(
+                    `shopify-buy-button-${productId}`,
+                  ),
+                  options: {
+                    product: {
+                      variantId: variant === "all" ? "all" : "first",
+                      width: "100%",
+                      styles: {
+                        product: {
+                          "@media (min-width: 601px)": {
+                            maxWidth: "calc(25% - 20px)",
+                            marginLeft: "20px",
+                            marginBottom: "20px",
                           },
                         },
                       },
                     },
-                  });
-                  ui.render(product);
+                    cart: {
+                      contents: {
+                        cart: {
+                          hidden: true,
+                        },
+                      },
+                      styles: {
+                        button: {
+                          ":hover": {
+                            "background-color": "#1a1a1a",
+                          },
+                        },
+                        footer: {
+                          "background-color": "#ffffff",
+                        },
+                      },
+                    },
+                  },
                 });
+                ui.render(product);
+              });
             });
           }
         }}

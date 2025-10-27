@@ -42,11 +42,16 @@ export default function Cart() {
     if (quantity <= 0) {
       removeItem(id);
     } else {
-      setItems(items.map((item) => (item.id === id ? { ...item, quantity } : item)));
+      setItems(
+        items.map((item) => (item.id === id ? { ...item, quantity } : item)),
+      );
     }
   };
 
-  const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const total = items.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0,
+  );
   const itemCount = items.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
@@ -65,7 +70,10 @@ export default function Cart() {
 
       {isOpen && (
         <div className="fixed inset-0 z-50 overflow-hidden">
-          <div className="absolute inset-0 bg-black/50" onClick={() => setIsOpen(false)} />
+          <div
+            className="absolute inset-0 bg-black/50"
+            onClick={() => setIsOpen(false)}
+          />
 
           <div className="absolute right-0 top-0 bottom-0 w-full max-w-md bg-white shadow-xl overflow-y-auto">
             <div className="p-6 border-b border-border flex items-center justify-between sticky top-0 bg-white">
@@ -86,7 +94,10 @@ export default function Cart() {
             ) : (
               <div className="p-6 space-y-6">
                 {items.map((item) => (
-                  <div key={item.id} className="flex gap-4 border-b border-border pb-4">
+                  <div
+                    key={item.id}
+                    className="flex gap-4 border-b border-border pb-4"
+                  >
                     {item.image && (
                       <img
                         src={item.image}
@@ -97,20 +108,30 @@ export default function Cart() {
                     <div className="flex-1">
                       <h3 className="font-bold text-foreground">{item.name}</h3>
                       {item.variant && (
-                        <p className="text-xs text-muted-foreground mt-1">{item.variant}</p>
+                        <p className="text-xs text-muted-foreground mt-1">
+                          {item.variant}
+                        </p>
                       )}
-                      <p className="text-primary font-semibold mt-2">${item.price.toFixed(2)}</p>
+                      <p className="text-primary font-semibold mt-2">
+                        ${item.price.toFixed(2)}
+                      </p>
 
                       <div className="flex items-center gap-2 mt-3">
                         <button
-                          onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                          onClick={() =>
+                            updateQuantity(item.id, item.quantity - 1)
+                          }
                           className="p-1 hover:bg-slate-100 rounded transition-colors"
                         >
                           <Minus className="w-4 h-4" />
                         </button>
-                        <span className="w-8 text-center font-semibold">{item.quantity}</span>
+                        <span className="w-8 text-center font-semibold">
+                          {item.quantity}
+                        </span>
                         <button
-                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                          onClick={() =>
+                            updateQuantity(item.id, item.quantity + 1)
+                          }
                           className="p-1 hover:bg-slate-100 rounded transition-colors"
                         >
                           <Plus className="w-4 h-4" />
