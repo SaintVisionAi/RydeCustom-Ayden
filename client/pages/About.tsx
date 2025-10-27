@@ -35,18 +35,24 @@ export default function About() {
       <Header />
 
       <main className="flex-1 w-full">
-        <section className="w-full bg-gradient-to-b from-slate-900 via-slate-800 to-background py-20 md:py-32 relative overflow-hidden">
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+        <section className="w-full relative overflow-hidden h-screen md:h-[600px] flex items-center justify-center">
+          <div
+            className="absolute inset-0 z-0"
+            style={{
+              backgroundImage: 'url(https://images.pexels.com/photos/733740/pexels-photo-733740.jpeg)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          >
+            <div className="absolute inset-0 bg-black/50" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           </div>
 
           <div className="container-section relative z-10">
             <div className="max-w-3xl">
-              <h1 className="text-white mb-6">About EMOTO</h1>
-              <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
-                We're building the future of custom electric bike parts—powered by AI, designed
-                for style, and built to last.
+              <h1 className="text-white mb-6" style={{ fontWeight: '300' }}>About RYDE CUSTOM</h1>
+              <p className="text-2xl text-gray-100 leading-relaxed max-w-2xl" style={{ fontWeight: '300' }}>
+                We're building the future of custom electric bike parts—powered by AI, designed for style, and built to last.
               </p>
             </div>
           </div>
