@@ -38,16 +38,16 @@ export default function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                className={`font-medium text-sm transition-colors ${
+                className={`font-semibold text-sm transition-all duration-300 ${
                   isActive(item.href)
                     ? "text-primary border-b-2 border-primary pb-1"
-                    : "text-foreground hover:text-primary"
+                    : "text-white hover:text-primary"
                 }`}
               >
                 {item.label}
               </a>
             ))}
-            <a href="/shop" className="btn-primary text-sm px-5 py-2">
+            <a href="/shop" className="btn-primary text-sm px-5 py-2 font-bold">
               Shop Now
             </a>
           </nav>
