@@ -49,15 +49,20 @@ export const App = () => (
   </QueryClientProvider>
 );
 
-// Handle createRoot with HMR support
-const root = document.getElementById("root");
-if (root && !root._reactRootContainer) {
-  const reactRoot = createRoot(root);
-  reactRoot.render(<App />);
-  (root as any)._reactRootContainer = reactRoot;
-}
+// Single root entry point - prevents double mount on HMR
+const rootElement = document.getElementById("root");
 
-// HMR support
-if (import.meta.hot) {
-  import.meta.hot.accept();
+if (rootElement) {
+  // Check if root already exists (HMR reload)
+  const existingRoot = (rootElement as any)._reactRoot;
+
+  if (existingRoot) {
+    // Re-render on HMR update
+    existingRoot.render(<App />);
+  } else {
+    // Initial mount
+    const newRoot = createRoot(rootElement);
+    newRoot.render(<App />);
+    (rootElement as any)._reactRoot = newRoot;
+  }
 }
