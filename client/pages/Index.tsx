@@ -150,7 +150,7 @@ export default function Index() {
               <h2 className="mb-4">See It In Action</h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Watch our viral video showcasing the ultimate custom electric bike setup with
-                EMOTO parts.
+                RYDE CUSTOM parts.
               </p>
             </div>
 
@@ -195,7 +195,7 @@ export default function Index() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { name: "Pro Carbon Handlebars", price: "$79.99" },
-                { name: "Baja for EMOTO", price: "$29.99" },
+                { name: "Baja for RYDE", price: "$29.99" },
                 { name: "Full Titanium Kit", price: "$149.99" },
                 { name: "Titanium Pedals", price: "$59.99" },
                 { name: "Professional Brakes", price: "$99.99" },
@@ -237,7 +237,7 @@ export default function Index() {
           <div className="container-section relative z-10 text-center">
             <h2 className="text-white mb-6">Ready to Upgrade Your Ride?</h2>
             <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
-              EMOTO's custom electric bike upgrades are built for speed, style, and personal
+              RYDE CUSTOM's premium electric bike upgrades are built for speed, style, and personal
               flair. Join thousands of riders who have transformed their bikes with our
               premium custom parts.
             </p>
