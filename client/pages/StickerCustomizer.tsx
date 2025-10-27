@@ -12,6 +12,7 @@ export default function StickerCustomizer() {
   const [shape, setShape] = useState("round");
   const [borderStyle, setBorderStyle] = useState("none");
   const [quantity, setQuantity] = useState(1);
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   const sizeMap: Record<string, string> = {
     small: "w-32 h-32",
