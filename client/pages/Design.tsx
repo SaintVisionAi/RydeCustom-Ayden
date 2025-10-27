@@ -142,11 +142,11 @@ export default function Design() {
           </div>
         </section>
 
-        <section className="w-full py-16 md:py-24 bg-secondary/5 border-y border-border">
+        <section className="w-full py-16 md:py-24 bg-slate-50 border-y border-border">
           <div className="container-section">
             <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose EMOTO?</h2>
-              <p className="text-lg text-muted-foreground">
+              <h2 className="text-4xl md:text-5xl font-light mb-4" style={{ fontWeight: '300' }}>Why Choose RYDE CUSTOM?</h2>
+              <p className="text-2xl text-muted-foreground" style={{ fontWeight: '300' }}>
                 The best custom bike parts experience, powered by AI
               </p>
             </div>
