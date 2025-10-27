@@ -118,7 +118,7 @@ export default function Shop() {
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-16 bg-slate-50 border-y border-border">
+        <section className="w-full py-12 md:py-16 bg-gradient-to-b from-slate-50 to-white border-y-2 border-primary/20">
           <div className="container-section">
             <h2 className="text-4xl md:text-5xl font-light mb-12 text-center" style={{ fontWeight: '300' }}>
               How Our Fulfillment Works
@@ -126,14 +126,14 @@ export default function Shop() {
 
             <div className="max-w-3xl mx-auto mb-12">
               <div className="space-y-6">
-                <div className="flex gap-4">
+                <div className="flex gap-4 p-6 rounded-lg bg-white border-2 border-border hover:border-primary/30 transition-all">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary text-white font-bold">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary text-white font-bold text-lg">
                       1
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg mb-2">You Place an Order</h3>
+                    <h3 className="font-bold text-lg mb-2 text-foreground">You Place an Order</h3>
                     <p className="text-muted-foreground">
                       Order through our Shopify store with your custom design or pre-made products.
                     </p>
