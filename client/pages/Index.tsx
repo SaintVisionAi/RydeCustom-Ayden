@@ -161,8 +161,8 @@ export default function Index() {
             <div className="relative rounded-2xl overflow-hidden h-96 md:h-[600px] bg-black group">
               <iframe
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="RYDE CUSTOM - Unleash Your Potential"
+                src="https://www.youtube.com/embed/VURaSWl2Yt4"
+                title="RYDE CUSTOM - Top 10 Best E-Motos"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
