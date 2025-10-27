@@ -18,18 +18,18 @@ export default function Header() {
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <header className="w-full bg-[#0f0f0f] bg-opacity-95 border-b-2 border-primary sticky top-0 z-50">
-      <div className="container-section py-3">
+    <header className="w-full bg-[#0f0f0f] bg-opacity-98 border-b-2 border-primary sticky top-0 z-50">
+      <div className="container-section py-4">
         <div className="flex items-center justify-between">
           <a href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity group">
             <img
               src={RYDE_LOGO}
               alt="RYDE CUSTOM Logo"
-              className="w-12 h-12 object-contain"
+              className="w-14 h-14 object-contain drop-shadow-lg"
             />
             <div className="flex flex-col">
-              <span className="font-bold text-xl text-primary group-hover:text-primary/90">RYDE</span>
-              <span className="text-xs font-semibold text-foreground tracking-widest">CUSTOM</span>
+              <span className="font-black text-2xl text-white group-hover:text-primary transition-colors" style={{ fontFamily: '"Clash Display", system-ui' }}>RYDE</span>
+              <span className="text-xs font-bold text-gray-300 tracking-widest">CUSTOM</span>
             </div>
           </a>
 
