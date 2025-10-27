@@ -155,37 +155,37 @@ export default function About() {
           </div>
         </section>
 
-        <section className="w-full py-16 md:py-24 bg-secondary/5 border-y border-border">
+        <section className="w-full py-16 md:py-24 bg-slate-50 border-y-2 border-primary/20">
           <div className="container-section">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-light mb-6" style={{ fontWeight: '300' }}>Why RYDE CUSTOM?</h2>
+              <h2 className="text-5xl md:text-6xl font-light mb-6" style={{ fontWeight: '300' }}>Why RYDE CUSTOM?</h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="font-bold text-lg mb-3">No Inventory Risk</h3>
-                  <p className="text-muted-foreground">
+                <div className="group p-6 bg-white rounded-xl border-2 border-border hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/20">
+                  <h3 className="font-bold text-lg mb-3 text-foreground group-hover:text-primary transition-colors">No Inventory Risk</h3>
+                  <p className="text-muted-foreground text-sm">
                     Print-on-demand means we only produce what's ordered. Zero dead stock, zero
                     waste.
                   </p>
                 </div>
 
-                <div>
-                  <h3 className="font-bold text-lg mb-3">Lightning-Fast Design</h3>
-                  <p className="text-muted-foreground">
+                <div className="group p-6 bg-white rounded-xl border-2 border-border hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/20">
+                  <h3 className="font-bold text-lg mb-3 text-foreground group-hover:text-primary transition-colors">Lightning-Fast Design</h3>
+                  <p className="text-muted-foreground text-sm">
                     Our AI agent guides you through the design process in minutes, not days.
                   </p>
                 </div>
 
-                <div>
-                  <h3 className="font-bold text-lg mb-3">Premium Quality</h3>
-                  <p className="text-muted-foreground">
+                <div className="group p-6 bg-white rounded-xl border-2 border-border hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/20">
+                  <h3 className="font-bold text-lg mb-3 text-foreground group-hover:text-primary transition-colors">Premium Quality</h3>
+                  <p className="text-muted-foreground text-sm">
                     Every product is carefully crafted and quality-tested before shipping to you.
                   </p>
                 </div>
 
-                <div>
-                  <h3 className="font-bold text-lg mb-3">Seamless Experience</h3>
-                  <p className="text-muted-foreground">
+                <div className="group p-6 bg-white rounded-xl border-2 border-border hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/20">
+                  <h3 className="font-bold text-lg mb-3 text-foreground group-hover:text-primary transition-colors">Seamless Experience</h3>
+                  <p className="text-muted-foreground text-sm">
                     From design to checkout to fulfillment—everything integrates perfectly.
                   </p>
                 </div>
