@@ -297,25 +297,19 @@ export default function Products() {
           <div className="container-section">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div className="p-6">
-                <div className="text-4xl font-bold text-primary mb-2">
-                  10K+
-                </div>
+                <div className="text-4xl font-bold text-primary mb-2">10K+</div>
                 <p className="text-muted-foreground font-semibold">
                   Happy Customers
                 </p>
               </div>
               <div className="p-6 border-l-2 border-r-2 border-primary/20">
-                <div className="text-4xl font-bold text-primary mb-2">
-                  4.8★
-                </div>
+                <div className="text-4xl font-bold text-primary mb-2">4.8★</div>
                 <p className="text-muted-foreground font-semibold">
                   Average Rating
                 </p>
               </div>
               <div className="p-6">
-                <div className="text-4xl font-bold text-primary mb-2">
-                  24/7
-                </div>
+                <div className="text-4xl font-bold text-primary mb-2">24/7</div>
                 <p className="text-muted-foreground font-semibold">
                   Customer Support
                 </p>

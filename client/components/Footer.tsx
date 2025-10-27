@@ -1,4 +1,11 @@
-import { Mail, Instagram, TrendingUp, Send, CreditCard, Lock } from "lucide-react";
+import {
+  Mail,
+  Instagram,
+  TrendingUp,
+  Send,
+  CreditCard,
+  Lock,
+} from "lucide-react";
 import { useState } from "react";
 
 const RYDE_LOGO =
@@ -27,9 +34,13 @@ export default function Footer() {
                 Subscribe to Our Newsletter
               </h3>
               <p className="text-gray-400 mb-6">
-                Get exclusive deals, product launches, and custom design tips delivered to your inbox.
+                Get exclusive deals, product launches, and custom design tips
+                delivered to your inbox.
               </p>
-              <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-2">
+              <form
+                onSubmit={handleNewsletterSubmit}
+                className="flex flex-col sm:flex-row gap-2"
+              >
                 <input
                   type="email"
                   placeholder="Enter your email"
@@ -54,7 +65,9 @@ export default function Footer() {
             </div>
 
             <div className="bg-white/5 border-2 border-primary/30 rounded-lg p-6">
-              <h3 className="font-bold mb-4 text-primary">Payment & Security</h3>
+              <h3 className="font-bold mb-4 text-primary">
+                Payment & Security
+              </h3>
               <div className="space-y-3 text-sm text-gray-300">
                 <div className="flex items-center gap-3">
                   <CreditCard className="w-5 h-5 text-primary" />
@@ -67,10 +80,18 @@ export default function Footer() {
                 <div className="mt-4 pt-4 border-t border-white/10">
                   <p className="text-xs text-gray-500 mb-2">Payment Methods:</p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-2 py-1 bg-white/10 rounded text-xs font-semibold">Visa</span>
-                    <span className="px-2 py-1 bg-white/10 rounded text-xs font-semibold">Mastercard</span>
-                    <span className="px-2 py-1 bg-white/10 rounded text-xs font-semibold">Amex</span>
-                    <span className="px-2 py-1 bg-white/10 rounded text-xs font-semibold">PayPal</span>
+                    <span className="px-2 py-1 bg-white/10 rounded text-xs font-semibold">
+                      Visa
+                    </span>
+                    <span className="px-2 py-1 bg-white/10 rounded text-xs font-semibold">
+                      Mastercard
+                    </span>
+                    <span className="px-2 py-1 bg-white/10 rounded text-xs font-semibold">
+                      Amex
+                    </span>
+                    <span className="px-2 py-1 bg-white/10 rounded text-xs font-semibold">
+                      PayPal
+                    </span>
                   </div>
                 </div>
               </div>
@@ -93,11 +114,14 @@ export default function Footer() {
                     >
                       RYDE
                     </span>
-                    <span className="text-xs font-bold text-gray-400">CUSTOM</span>
+                    <span className="text-xs font-bold text-gray-400">
+                      CUSTOM
+                    </span>
                   </div>
                 </div>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Custom electric bike parts, performance plates, and premium carbon fiber upgrades powered by innovation.
+                  Custom electric bike parts, performance plates, and premium
+                  carbon fiber upgrades powered by innovation.
                 </p>
               </div>
 
@@ -105,22 +129,34 @@ export default function Footer() {
                 <h4 className="font-bold mb-4">Products</h4>
                 <ul className="space-y-2 text-sm text-gray-300">
                   <li>
-                    <a href="/products" className="hover:text-primary transition-colors">
+                    <a
+                      href="/products"
+                      className="hover:text-primary transition-colors"
+                    >
                       Bike Parts
                     </a>
                   </li>
                   <li>
-                    <a href="/products" className="hover:text-primary transition-colors">
+                    <a
+                      href="/products"
+                      className="hover:text-primary transition-colors"
+                    >
                       Plates & Decals
                     </a>
                   </li>
                   <li>
-                    <a href="/products" className="hover:text-primary transition-colors">
+                    <a
+                      href="/products"
+                      className="hover:text-primary transition-colors"
+                    >
                       Carbon Fiber
                     </a>
                   </li>
                   <li>
-                    <a href="/products" className="hover:text-primary transition-colors">
+                    <a
+                      href="/products"
+                      className="hover:text-primary transition-colors"
+                    >
                       Stickers
                     </a>
                   </li>
@@ -131,22 +167,34 @@ export default function Footer() {
                 <h4 className="font-bold mb-4">Company</h4>
                 <ul className="space-y-2 text-sm text-gray-300">
                   <li>
-                    <a href="/about" className="hover:text-primary transition-colors">
+                    <a
+                      href="/about"
+                      className="hover:text-primary transition-colors"
+                    >
                       About Us
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-primary transition-colors">
+                    <a
+                      href="#"
+                      className="hover:text-primary transition-colors"
+                    >
                       Blog
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-primary transition-colors">
+                    <a
+                      href="#"
+                      className="hover:text-primary transition-colors"
+                    >
                       Contact
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-primary transition-colors">
+                    <a
+                      href="#"
+                      className="hover:text-primary transition-colors"
+                    >
                       FAQs
                     </a>
                   </li>

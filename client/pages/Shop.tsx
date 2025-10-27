@@ -1,4 +1,12 @@
-import { ShoppingCart, ArrowRight, Truck, Lock, RotateCcw, Star, Zap } from "lucide-react";
+import {
+  ShoppingCart,
+  ArrowRight,
+  Truck,
+  Lock,
+  RotateCcw,
+  Star,
+  Zap,
+} from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -47,13 +55,13 @@ function GuaranteeCard({ guarantee }: { guarantee: Guarantee }) {
   );
 }
 
-function FeaturedProductCard({ 
-  number, 
-  title, 
-  description 
-}: { 
-  number: number; 
-  title: string; 
+function FeaturedProductCard({
+  number,
+  title,
+  description,
+}: {
+  number: number;
+  title: string;
   description: string;
 }) {
   return (
@@ -73,18 +81,13 @@ function FeaturedProductCard({
         <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
           {title}
         </h3>
-        <p className="text-sm text-muted-foreground mb-4">
-          {description}
-        </p>
+        <p className="text-sm text-muted-foreground mb-4">{description}</p>
         <div className="flex items-center justify-between">
           <div className="flex gap-1">
             {Array(5)
               .fill(null)
               .map((_, i) => (
-                <Star
-                  key={i}
-                  className="w-4 h-4 fill-primary text-primary"
-                />
+                <Star key={i} className="w-4 h-4 fill-primary text-primary" />
               ))}
           </div>
           <button className="btn-primary py-2 px-4 text-sm font-bold hover:scale-105 transition-transform">
@@ -178,7 +181,8 @@ export default function Shop() {
                   </p>
                 </div>
                 <p className="text-muted-foreground">
-                  Live product catalog will be embedded here with real-time inventory and pricing
+                  Live product catalog will be embedded here with real-time
+                  inventory and pricing
                 </p>
               </div>
             </div>
@@ -329,7 +333,8 @@ export default function Shop() {
                     <span className="font-semibold">Shopify Payments</span>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Primary checkout powered by Shopify, supporting all major credit cards.
+                    Primary checkout powered by Shopify, supporting all major
+                    credit cards.
                   </p>
                 </div>
                 <div className="p-6 bg-white rounded-lg border-2 border-border hover:border-primary/30 transition-all group">
@@ -351,7 +356,8 @@ export default function Shop() {
                     <span className="font-semibold">Stripe Integration</span>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Advanced payment flows for custom orders and alternative methods.
+                    Advanced payment flows for custom orders and alternative
+                    methods.
                   </p>
                 </div>
               </div>
