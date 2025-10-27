@@ -137,12 +137,24 @@ export default function Index() {
               {categories.map((category, index) => (
                 <div
                   key={index}
-                  className="animate-scale-in"
+                  className="group overflow-hidden rounded-xl border-2 border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 bg-white animate-scale-in"
                   style={{
                     animationDelay: `${index * 100}ms`,
                   }}
                 >
-                  <ProductCard {...category} />
+                  <div className="relative aspect-square bg-gradient-to-br from-slate-100 to-slate-200 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent group-hover:from-primary/10 transition-all duration-300" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <category.icon className="w-20 h-20 text-slate-400 group-hover:text-primary/40 transition-colors duration-300" />
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">{category.title}</h3>
+                    <p className="text-muted-foreground text-sm mb-4">{category.description}</p>
+                    <button className="flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+                      Explore <ArrowRight className="w-4 h-4" />
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
