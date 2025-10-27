@@ -32,6 +32,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <IntegrationInitializer />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/products" element={<Products />} />
