@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import AIChat from "@/components/AIChat";
 
 export default function StickerCustomizer() {
-  const [text, setText] = useState("EMOTO");
+  const [text, setText] = useState("RYDE");
   const [backgroundColor, setBackgroundColor] = useState("#6D28D9");
   const [textColor, setTextColor] = useState("#FFFFFF");
   const [size, setSize] = useState("medium");
@@ -87,7 +87,7 @@ export default function StickerCustomizer() {
                       overflow: "hidden",
                     }}
                   >
-                    <span className="text-lg md:text-2xl px-4">{text || "EMOTO"}</span>
+                    <span className="text-lg md:text-2xl px-4">{text || "RYDE"}</span>
                   </div>
                 </div>
 
@@ -320,7 +320,7 @@ export default function StickerCustomizer() {
           >
             <MessageSquare className="w-5 h-5" />
             <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300">
-              EMOTO AI
+              RYDE AI
             </span>
           </button>
         </div>
