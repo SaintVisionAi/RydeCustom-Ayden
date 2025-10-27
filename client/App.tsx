@@ -48,21 +48,3 @@ export const App = () => (
     </TooltipProvider>
   </QueryClientProvider>
 );
-
-// Single root entry point - prevents double mount on HMR
-const rootElement = document.getElementById("root");
-
-if (rootElement) {
-  // Check if root already exists (HMR reload)
-  const existingRoot = (rootElement as any)._reactRoot;
-
-  if (existingRoot) {
-    // Re-render on HMR update
-    existingRoot.render(<App />);
-  } else {
-    // Initial mount
-    const newRoot = createRoot(rootElement);
-    newRoot.render(<App />);
-    (rootElement as any)._reactRoot = newRoot;
-  }
-}
