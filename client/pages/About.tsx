@@ -76,9 +76,9 @@ export default function About() {
           </div>
         </section>
 
-        <section className="w-full py-16 md:py-24 bg-secondary/5 border-y border-border">
+        <section className="w-full py-16 md:py-24 bg-slate-50 border-y border-border">
           <div className="container-section">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Our Values</h2>
+            <h2 className="text-4xl md:text-5xl font-light mb-12 text-center" style={{ fontWeight: '300' }}>Our Values</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {VALUES.map((value, index) => {
