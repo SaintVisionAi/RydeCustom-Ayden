@@ -18,6 +18,14 @@ import { logIntegrationStatus } from "./lib/integrations";
 
 const queryClient = new QueryClient();
 
+function IntegrationInitializer() {
+  useEffect(() => {
+    logIntegrationStatus();
+  }, []);
+
+  return null;
+}
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
