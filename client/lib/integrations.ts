@@ -98,19 +98,29 @@ export function validateIntegrations(): {
 } {
   const warnings: string[] = [];
   const errors: string[] = [];
+  const isDev = import.meta.env.DEV;
 
+  // In production, treat missing keys as errors. In dev, just warn.
   if (!ANTHROPIC_CONFIG.apiKey) {
-    errors.push("VITE_ANTHROPIC_API_KEY is not set. AI features will not work.");
+    const msg = "VITE_ANTHROPIC_API_KEY is not set. AI features will not work.";
+    if (isDev) {
+      warnings.push(`[DEV] ${msg} Set it in .env.local to enable.`);
+    } else {
+      errors.push(msg);
+    }
   }
 
   if (!SHOPIFY_CONFIG.storeId || !SHOPIFY_CONFIG.accessToken) {
-    errors.push(
-      "Shopify configuration incomplete. Products and checkout will not work."
-    );
+    const msg = "Shopify configuration incomplete. Products and checkout will not work.";
+    if (isDev) {
+      warnings.push(`[DEV] ${msg} Set VITE_SHOPIFY_STORE_ID and VITE_SHOPIFY_ACCESS_TOKEN in .env.local to enable.`);
+    } else {
+      errors.push(msg);
+    }
   }
 
   if (!PRINTIFY_CONFIG.apiKey || !PRINTIFY_CONFIG.storeId) {
-    warnings.push("Printify configuration incomplete. Print-on-demand features limited.");
+    warnings.push("Printify configuration incomplete. Print-on-demand features limited. Set VITE_PRINTIFY_API_KEY and VITE_PRINTIFY_STORE_ID in .env.local.");
   }
 
   if (!STRIPE_CONFIG.enabled) {
