@@ -237,12 +237,24 @@ export default function Index() {
           <div className="container-section relative z-10 text-center">
             <h2 className="text-white mb-6">Ready to Upgrade Your Ride?</h2>
             <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
-              Join thousands of riders who have transformed their electric bikes with our
+              EMOTO's custom electric bike upgrades are built for speed, style, and personal
+              flair. Join thousands of riders who have transformed their bikes with our
               premium custom parts.
             </p>
-            <button className="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-colors inline-flex items-center gap-2">
-              Shop All Products <ArrowRight className="w-5 h-5" />
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/shop"
+                className="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-colors inline-flex items-center justify-center gap-2"
+              >
+                Shop All Products <ArrowRight className="w-5 h-5" />
+              </a>
+              <a
+                href="/design"
+                className="bg-white/20 text-white hover:bg-white/30 px-8 py-4 rounded-lg font-bold text-lg transition-colors inline-flex items-center justify-center gap-2 border border-white"
+              >
+                Design Your Own <ArrowRight className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         </section>
       </main>
