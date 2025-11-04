@@ -72,12 +72,20 @@ export default function Header() {
                   {item.label}
                 </a>
               ))}
-              <a
-                href="/shop"
-                className="btn-primary text-sm px-5 py-2 font-bold"
-              >
-                Shop Now
-              </a>
+              <div className="flex gap-3">
+                <a
+                  href="/bike-builder"
+                  className="btn-primary text-sm px-5 py-2 font-bold"
+                >
+                  Build Bike
+                </a>
+                <a
+                  href="/shop"
+                  className="btn-outline border-primary text-primary text-sm px-5 py-2 font-bold"
+                >
+                  Shop
+                </a>
+              </div>
             </nav>
 
             <button
