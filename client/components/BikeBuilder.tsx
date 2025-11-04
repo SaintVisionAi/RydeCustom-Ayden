@@ -1,6 +1,5 @@
-import { useRef, useEffect, useState } from "react";
-import * as THREE from "three";
-import { ArrowLeft, RotateCw, ShoppingCart } from "lucide-react";
+import { useState } from "react";
+import { ArrowLeft, ShoppingCart, ZoomIn } from "lucide-react";
 
 interface BikeConfig {
   frameColor: string;
@@ -13,9 +12,9 @@ interface BikeConfig {
 }
 
 const FRAME_TYPES = [
-  { name: "Aluminum", color: "#c0c0c0", price: 0 },
-  { name: "Carbon", color: "#1a1a1a", price: 500 },
-  { name: "Titanium", color: "#d3d3d3", price: 800 },
+  { name: "Aluminum", price: 0 },
+  { name: "Carbon", price: 500 },
+  { name: "Titanium", price: 800 },
 ];
 
 const FRAME_COLORS = [
@@ -54,235 +53,30 @@ const SUSPENSION_TYPES = [
   { name: "Stock", price: 0 },
 ];
 
-function createModernBike(config: BikeConfig): THREE.Group {
-  const group = new THREE.Group();
-
-  // Frame material
-  const frameMaterial = new THREE.MeshPhongMaterial({
-    color: config.frameColor,
-    shininess: 100,
-    metalness: 0.3,
-  });
-
-  // Main frame tube (backbone)
-  const backboneGeometry = new THREE.CylinderGeometry(0.08, 0.08, 1.8, 16);
-  const backbone = new THREE.Mesh(backboneGeometry, frameMaterial);
-  backbone.castShadow = true;
-  backbone.receiveShadow = true;
-  backbone.rotation.z = Math.PI / 8;
-  backbone.position.set(0.05, 0.6, 0);
-  group.add(backbone);
-
-  // Swingarm (rear frame)
-  const swingarmGeometry = new THREE.CylinderGeometry(0.06, 0.06, 1.1, 16);
-  const swingarm = new THREE.Mesh(swingarmGeometry, frameMaterial);
-  swingarm.castShadow = true;
-  swingarm.receiveShadow = true;
-  swingarm.rotation.z = Math.PI / 2;
-  swingarm.position.set(0.1, 0.4, -0.3);
-  group.add(swingarm);
-
-  // Fork tubes (front suspension)
-  const forkGeometry = new THREE.CylinderGeometry(0.04, 0.04, 0.8, 16);
-  const forkMaterial = new THREE.MeshPhongMaterial({
-    color: "#2a2a2a",
-    shininess: 120,
-  });
-
-  const forkLeft = new THREE.Mesh(forkGeometry, forkMaterial);
-  forkLeft.castShadow = true;
-  forkLeft.receiveShadow = true;
-  forkLeft.position.set(-0.15, 0.5, 0.9);
-  group.add(forkLeft);
-
-  const forkRight = new THREE.Mesh(forkGeometry, forkMaterial);
-  forkRight.castShadow = true;
-  forkRight.receiveShadow = true;
-  forkRight.position.set(0.15, 0.5, 0.9);
-  group.add(forkRight);
-
-  // Front wheel with spokes (Warp 9 style)
-  const wheelGeometry = new THREE.CylinderGeometry(0.35, 0.35, 0.12, 32);
-  const wheelMaterial = new THREE.MeshPhongMaterial({
-    color: "#1a1a1a",
-    shininess: 80,
-  });
-
-  const frontWheel = new THREE.Mesh(wheelGeometry, wheelMaterial);
-  frontWheel.castShadow = true;
-  frontWheel.receiveShadow = true;
-  frontWheel.rotation.z = Math.PI / 2;
-  frontWheel.position.set(0, 0.35, 0.95);
-  group.add(frontWheel);
-
-  // Tire (outer ring)
-  const tireGeometry = new THREE.TorusGeometry(0.38, 0.06, 16, 32);
-  const tireMaterial = new THREE.MeshPhongMaterial({ color: "#0a0a0a" });
-  const frontTire = new THREE.Mesh(tireGeometry, tireMaterial);
-  frontTire.castShadow = true;
-  frontTire.receiveShadow = true;
-  frontTire.rotation.y = Math.PI / 2;
-  frontTire.position.set(0, 0.35, 0.95);
-  group.add(frontTire);
-
-  // Rear wheel
-  const rearWheel = new THREE.Mesh(wheelGeometry, wheelMaterial);
-  rearWheel.castShadow = true;
-  rearWheel.receiveShadow = true;
-  rearWheel.rotation.z = Math.PI / 2;
-  rearWheel.position.set(0, 0.35, -0.7);
-  group.add(rearWheel);
-
-  const rearTire = new THREE.Mesh(tireGeometry, tireMaterial);
-  rearTire.castShadow = true;
-  rearTire.receiveShadow = true;
-  rearTire.rotation.y = Math.PI / 2;
-  rearTire.position.set(0, 0.35, -0.7);
-  group.add(rearTire);
-
-  // Engine block (modern, compact)
-  const engineGeometry = new THREE.BoxGeometry(0.4, 0.35, 0.5);
-  const engineMaterial = new THREE.MeshPhongMaterial({
-    color: "#333333",
-    shininess: 90,
-  });
-  const engine = new THREE.Mesh(engineGeometry, engineMaterial);
-  engine.castShadow = true;
-  engine.receiveShadow = true;
-  engine.position.set(0.08, 0.45, 0.05);
-  group.add(engine);
-
-  // Exhaust pipe (prominent, sporty)
-  const exhaustGeometry = new THREE.CylinderGeometry(0.12, 0.08, 0.7, 16);
-  const exhaustMaterial = new THREE.MeshPhongMaterial({
-    color: "#555555",
-    shininess: 60,
-  });
-  const exhaust = new THREE.Mesh(exhaustGeometry, exhaustMaterial);
-  exhaust.castShadow = true;
-  exhaust.receiveShadow = true;
-  exhaust.rotation.z = Math.PI / 3.5;
-  exhaust.position.set(-0.25, 0.35, -0.1);
-  group.add(exhaust);
-
-  // Exhaust tip
-  const tipGeometry = new THREE.CylinderGeometry(0.08, 0.06, 0.15, 16);
-  const tipMaterial = new THREE.MeshPhongMaterial({ color: "#666666" });
-  const tip = new THREE.Mesh(tipGeometry, tipMaterial);
-  tip.castShadow = true;
-  tip.receiveShadow = true;
-  tip.rotation.z = Math.PI / 3.5;
-  tip.position.set(-0.4, 0.15, -0.25);
-  group.add(tip);
-
-  // Fuel tank (modern design)
-  const tankGeometry = new THREE.BoxGeometry(0.3, 0.35, 0.6);
-  const tankMaterial = new THREE.MeshPhongMaterial({
-    color: config.frameColor,
-    shininess: 110,
-    metalness: 0.2,
-  });
-  const tank = new THREE.Mesh(tankGeometry, tankMaterial);
-  tank.castShadow = true;
-  tank.receiveShadow = true;
-  tank.position.set(-0.05, 0.8, 0.15);
-  // Round corners slightly
-  tank.geometry.computeVertexNormals();
-  group.add(tank);
-
-  // Seat (sleek, angular)
-  const seatGeometry = new THREE.BoxGeometry(0.28, 0.15, 0.5);
-  const seatMaterial = new THREE.MeshPhongMaterial({
-    color: "#1a1a1a",
-    shininess: 80,
-  });
-  const seat = new THREE.Mesh(seatGeometry, seatMaterial);
-  seat.castShadow = true;
-  seat.receiveShadow = true;
-  seat.position.set(-0.05, 1.05, -0.15);
-  group.add(seat);
-
-  // Handlebars
-  const barGeometry = new THREE.CylinderGeometry(0.04, 0.04, 0.35, 16);
-  const barMaterial = new THREE.MeshPhongMaterial({
-    color: "#444444",
-    shininess: 90,
-  });
-  const handlebars = new THREE.Mesh(barGeometry, barMaterial);
-  handlebars.castShadow = true;
-  handlebars.receiveShadow = true;
-  handlebars.rotation.x = Math.PI / 6;
-  handlebars.position.set(0, 1.3, 0.85);
-  group.add(handlebars);
-
-  // Brake disc (front)
-  const discGeometry = new THREE.CylinderGeometry(0.3, 0.3, 0.03, 32);
-  const discMaterial = new THREE.MeshPhongMaterial({
-    color: "#8b0000",
-    shininess: 100,
-  });
-  const brakeFront = new THREE.Mesh(discGeometry, discMaterial);
-  brakeFront.castShadow = true;
-  brakeFront.receiveShadow = true;
-  brakeFront.rotation.z = Math.PI / 2;
-  brakeFront.position.set(-0.18, 0.35, 0.95);
-  group.add(brakeFront);
-
-  // Headlight
-  const lightGeometry = new THREE.SphereGeometry(0.08, 16, 16);
-  const lightMaterial = new THREE.MeshPhongMaterial({
-    color: "#ffff00",
-    emissive: "#ffff00",
-    emissiveIntensity: 0.3,
-  });
-  const headlight = new THREE.Mesh(lightGeometry, lightMaterial);
-  headlight.castShadow = true;
-  headlight.receiveShadow = true;
-  headlight.position.set(0, 1, 1);
-  group.add(headlight);
-
-  // Tail light
-  const tailGeometry = new THREE.SphereGeometry(0.06, 16, 16);
-  const tailMaterial = new THREE.MeshPhongMaterial({
-    color: "#ff0000",
-    emissive: "#ff0000",
-    emissiveIntensity: 0.2,
-  });
-  const tailLight = new THREE.Mesh(tailGeometry, tailMaterial);
-  tailLight.castShadow = true;
-  tailLight.receiveShadow = true;
-  tailLight.position.set(0, 0.9, -0.85);
-  group.add(tailLight);
-
-  // Fairings (modern aerodynamic panels)
-  const fairingGeometry = new THREE.BoxGeometry(0.25, 0.4, 0.55);
-  const fairingMaterial = new THREE.MeshPhongMaterial({
-    color: config.frameColor,
-    shininess: 120,
-    metalness: 0.15,
-  });
-  const fairing = new THREE.Mesh(fairingGeometry, fairingMaterial);
-  fairing.castShadow = true;
-  fairing.receiveShadow = true;
-  fairing.position.set(0, 0.9, 0.3);
-  group.add(fairing);
-
-  group.castShadow = true;
-  group.receiveShadow = true;
-
-  return group;
-}
+// Real e-moto images (royalty-free from Pexels)
+const BIKE_IMAGES = [
+  {
+    angle: "Side Profile",
+    url: "https://images.pexels.com/photos/24375965/pexels-photo-24375965.jpeg",
+    alt: "Classic black and white motorcycle",
+  },
+  {
+    angle: "3/4 View",
+    url: "https://images.pexels.com/photos/15009902/pexels-photo-15009902.jpeg",
+    alt: "Modern electric bike",
+  },
+  {
+    angle: "Close-up Detail",
+    url: "https://images.pexels.com/photos/24375965/pexels-photo-24375965.jpeg",
+    alt: "Motorcycle detail shot",
+  },
+];
 
 interface BikeBuilderProps {
   onClose?: () => void;
 }
 
 export default function BikeBuilder({ onClose }: BikeBuilderProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const sceneRef = useRef<THREE.Scene | null>(null);
-  const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
-  const bikeRef = useRef<THREE.Group | null>(null);
-
   const [config, setConfig] = useState<BikeConfig>({
     frameColor: "#b8860b",
     frameType: "Aluminum",
@@ -293,114 +87,8 @@ export default function BikeBuilder({ onClose }: BikeBuilderProps) {
     price: 3499.99,
   });
 
-  const [rotation, setRotation] = useState(0);
-
-  useEffect(() => {
-    if (!containerRef.current) return;
-
-    // Scene setup
-    const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xfafafa);
-    sceneRef.current = scene;
-
-    // Camera
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      containerRef.current.clientWidth / containerRef.current.clientHeight,
-      0.1,
-      1000
-    );
-    camera.position.set(0, 0.8, 2.2);
-    camera.lookAt(0, 0.5, 0);
-
-    // Renderer
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setSize(
-      containerRef.current.clientWidth,
-      containerRef.current.clientHeight
-    );
-    renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFShadowShadowMap;
-    containerRef.current.appendChild(renderer.domElement);
-    rendererRef.current = renderer;
-
-    // Lights
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-    scene.add(ambientLight);
-
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    directionalLight.position.set(8, 12, 6);
-    directionalLight.castShadow = true;
-    directionalLight.shadow.mapSize.width = 4096;
-    directionalLight.shadow.mapSize.height = 4096;
-    directionalLight.shadow.camera.left = -5;
-    directionalLight.shadow.camera.right = 5;
-    directionalLight.shadow.camera.top = 5;
-    directionalLight.shadow.camera.bottom = -5;
-    scene.add(directionalLight);
-
-    // Point light for rim glow
-    const pointLight = new THREE.PointLight(0xb8860b, 0.4);
-    pointLight.position.set(2, 1, 2);
-    scene.add(pointLight);
-
-    // Create bike
-    const bike = createModernBike(config);
-    scene.add(bike);
-    bikeRef.current = bike;
-
-    // Ground plane
-    const groundGeometry = new THREE.PlaneGeometry(12, 12);
-    const groundMaterial = new THREE.ShadowMaterial({ opacity: 0.2 });
-    const ground = new THREE.Mesh(groundGeometry, groundMaterial);
-    ground.rotation.x = -Math.PI / 2;
-    ground.position.y = 0;
-    ground.receiveShadow = true;
-    scene.add(ground);
-
-    // Animation loop
-    const animate = () => {
-      requestAnimationFrame(animate);
-      if (bikeRef.current) {
-        bikeRef.current.rotation.y = rotation;
-      }
-      renderer.render(scene, camera);
-    };
-    animate();
-
-    // Handle resize
-    const handleResize = () => {
-      if (!containerRef.current) return;
-      const width = containerRef.current.clientWidth;
-      const height = containerRef.current.clientHeight;
-      camera.aspect = width / height;
-      camera.updateProjectionMatrix();
-      renderer.setSize(width, height);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      if (containerRef.current && renderer.domElement.parentNode) {
-        containerRef.current.removeChild(renderer.domElement);
-      }
-      renderer.dispose();
-    };
-  }, [rotation, config]);
-
-  const handleRotate360 = () => {
-    let currentRotation = rotation;
-    const interval = setInterval(() => {
-      currentRotation += 0.05;
-      if (currentRotation >= rotation + Math.PI * 2) {
-        clearInterval(interval);
-        setRotation(currentRotation - Math.PI * 2);
-      } else {
-        setRotation(currentRotation);
-      }
-    }, 16);
-  };
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isZoomed, setIsZoomed] = useState(false);
 
   const calculatePrice = () => {
     const framePrice = FRAME_TYPES.find(
@@ -416,7 +104,9 @@ export default function BikeBuilder({ onClose }: BikeBuilderProps) {
       SUSPENSION_TYPES.find((s) => s.name === config.suspensionType)?.price ||
       0;
 
-    return 2499.99 + framePrice + wheelPrice + exhaustPrice + brakePrice + suspensionPrice;
+    return (
+      2499.99 + framePrice + wheelPrice + exhaustPrice + brakePrice + suspensionPrice
+    );
   };
 
   const handleAddToCart = () => {
@@ -430,6 +120,8 @@ export default function BikeBuilder({ onClose }: BikeBuilderProps) {
     localStorage.setItem("lastCustomBike", JSON.stringify(cartItem));
     alert(`Added custom bike to cart! Total: $${calculatePrice().toFixed(2)}`);
   };
+
+  const currentImage = BIKE_IMAGES[currentImageIndex];
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
@@ -446,27 +138,114 @@ export default function BikeBuilder({ onClose }: BikeBuilderProps) {
       )}
 
       <div className="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
-        {/* 3D Canvas */}
+        {/* Bike Display */}
         <div className="lg:col-span-2">
-          <div className="rounded-xl overflow-hidden border-2 border-border bg-white h-full min-h-96">
-            <div
-              ref={containerRef}
-              style={{ width: "100%", height: "500px" }}
-            />
-            <div className="p-4 bg-slate-50 border-t border-border flex gap-3">
+          <div className="rounded-xl overflow-hidden border-2 border-border bg-white h-full">
+            {/* Main Image */}
+            <div className="relative bg-gradient-to-br from-slate-100 to-slate-50 aspect-video flex items-center justify-center overflow-hidden">
+              <img
+                src={currentImage.url}
+                alt={currentImage.alt}
+                className={`w-full h-full object-cover transition-transform duration-300 ${
+                  isZoomed ? "scale-150" : "scale-100"
+                }`}
+                style={{
+                  filter: `hue-rotate(${
+                    config.frameColor === "#b8860b"
+                      ? 0
+                      : config.frameColor === "#1a1a1a"
+                        ? 0
+                        : config.frameColor === "#d4af37"
+                          ? 40
+                          : config.frameColor === "#ff6b00"
+                            ? 25
+                            : config.frameColor === "#dc143c"
+                              ? -30
+                              : config.frameColor === "#f0f0f0"
+                                ? 0
+                                : 240
+                  }deg) brightness(${isZoomed ? 1.1 : 1})`,
+                }}
+              />
+
+              {/* Frame Color Label Overlay */}
+              <div className="absolute top-4 left-4 bg-black/60 text-white px-4 py-2 rounded-lg backdrop-blur-sm">
+                <p className="text-sm font-semibold">
+                  {FRAME_COLORS.find((c) => c.hex === config.frameColor)?.name ||
+                    "Custom"}
+                </p>
+              </div>
+
+              {/* Zoom Button */}
               <button
-                onClick={handleRotate360}
-                className="flex-1 btn-outline border-primary text-primary py-2 px-4 flex items-center justify-center gap-2"
+                onClick={() => setIsZoomed(!isZoomed)}
+                className="absolute bottom-4 right-4 bg-primary text-white p-3 rounded-full hover:bg-primary/90 transition-colors shadow-lg"
               >
-                <RotateCw className="w-4 h-4" />
-                Rotate 360°
+                <ZoomIn className="w-5 h-5" />
               </button>
-              <button
-                onClick={() => setRotation((r) => r + Math.PI / 4)}
-                className="flex-1 btn-outline border-primary text-primary py-2 px-4"
-              >
-                ↻ Manual
-              </button>
+            </div>
+
+            {/* Angle Selector */}
+            <div className="p-4 bg-slate-50 border-t border-border">
+              <p className="text-xs text-muted-foreground mb-3 font-semibold">
+                VIEW ANGLES
+              </p>
+              <div className="grid grid-cols-3 gap-3">
+                {BIKE_IMAGES.map((image, index) => (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      setCurrentImageIndex(index);
+                      setIsZoomed(false);
+                    }}
+                    className={`p-3 rounded-lg border-2 transition-all text-xs font-semibold ${
+                      currentImageIndex === index
+                        ? "border-primary bg-primary/10"
+                        : "border-border hover:border-primary/50"
+                    }`}
+                  >
+                    {image.angle}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Specs Display */}
+            <div className="p-4 bg-white border-t border-border">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
+                <div>
+                  <p className="text-xs text-muted-foreground">Frame</p>
+                  <p className="font-bold text-sm">{config.frameType}</p>
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground">Wheels</p>
+                  <p className="font-bold text-sm">
+                    {config.wheelType.split(" ")[0]}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground">Exhaust</p>
+                  <p className="font-bold text-sm">
+                    {config.exhaustType.split(" ")[0]}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground">Brakes</p>
+                  <p className="font-bold text-sm">
+                    {config.brakeType.split(" ")[0]}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground">Suspension</p>
+                  <p className="font-bold text-sm">
+                    {config.suspensionType.split(" ")[0]}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground">Power</p>
+                  <p className="font-bold text-sm">8KW+</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -546,7 +325,9 @@ export default function BikeBuilder({ onClose }: BikeBuilderProps) {
               {EXHAUST_TYPES.map((exhaust) => (
                 <button
                   key={exhaust.name}
-                  onClick={() => setConfig({ ...config, exhaustType: exhaust.name })}
+                  onClick={() =>
+                    setConfig({ ...config, exhaustType: exhaust.name })
+                  }
                   className={`w-full p-3 rounded-lg border-2 transition-all text-left ${
                     config.exhaustType === exhaust.name
                       ? "border-primary bg-primary/10"
@@ -592,7 +373,9 @@ export default function BikeBuilder({ onClose }: BikeBuilderProps) {
               {SUSPENSION_TYPES.map((suspension) => (
                 <button
                   key={suspension.name}
-                  onClick={() => setConfig({ ...config, suspensionType: suspension.name })}
+                  onClick={() =>
+                    setConfig({ ...config, suspensionType: suspension.name })
+                  }
                   className={`w-full p-3 rounded-lg border-2 transition-all text-left ${
                     config.suspensionType === suspension.name
                       ? "border-primary bg-primary/10"
