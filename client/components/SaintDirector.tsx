@@ -81,8 +81,7 @@ export default function SaintDirector() {
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         type: "assistant",
-        content:
-          "Sorry, I'm having trouble connecting. Try again in a moment!",
+        content: "Sorry, I'm having trouble connecting. Try again in a moment!",
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, errorMessage]);

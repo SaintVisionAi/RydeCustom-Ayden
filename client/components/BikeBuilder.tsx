@@ -91,9 +91,8 @@ export default function BikeBuilder({ onClose }: BikeBuilderProps) {
   const [isZoomed, setIsZoomed] = useState(false);
 
   const calculatePrice = () => {
-    const framePrice = FRAME_TYPES.find(
-      (f) => f.name === config.frameType
-    )?.price || 0;
+    const framePrice =
+      FRAME_TYPES.find((f) => f.name === config.frameType)?.price || 0;
     const wheelPrice =
       WHEEL_TYPES.find((w) => w.name === config.wheelType)?.price || 0;
     const exhaustPrice =
@@ -105,7 +104,12 @@ export default function BikeBuilder({ onClose }: BikeBuilderProps) {
       0;
 
     return (
-      2499.99 + framePrice + wheelPrice + exhaustPrice + brakePrice + suspensionPrice
+      2499.99 +
+      framePrice +
+      wheelPrice +
+      exhaustPrice +
+      brakePrice +
+      suspensionPrice
     );
   };
 
@@ -171,8 +175,8 @@ export default function BikeBuilder({ onClose }: BikeBuilderProps) {
               {/* Frame Color Label Overlay */}
               <div className="absolute top-4 left-4 bg-black/60 text-white px-4 py-2 rounded-lg backdrop-blur-sm">
                 <p className="text-sm font-semibold">
-                  {FRAME_COLORS.find((c) => c.hex === config.frameColor)?.name ||
-                    "Custom"}
+                  {FRAME_COLORS.find((c) => c.hex === config.frameColor)
+                    ?.name || "Custom"}
                 </p>
               </div>
 
@@ -259,7 +263,9 @@ export default function BikeBuilder({ onClose }: BikeBuilderProps) {
               {FRAME_COLORS.map((color) => (
                 <button
                   key={color.hex}
-                  onClick={() => setConfig({ ...config, frameColor: color.hex })}
+                  onClick={() =>
+                    setConfig({ ...config, frameColor: color.hex })
+                  }
                   className={`w-full aspect-square rounded-lg border-2 transition-all ${
                     config.frameColor === color.hex
                       ? "border-primary ring-2 ring-primary"
@@ -302,7 +308,9 @@ export default function BikeBuilder({ onClose }: BikeBuilderProps) {
               {WHEEL_TYPES.map((wheel) => (
                 <button
                   key={wheel.name}
-                  onClick={() => setConfig({ ...config, wheelType: wheel.name })}
+                  onClick={() =>
+                    setConfig({ ...config, wheelType: wheel.name })
+                  }
                   className={`w-full p-3 rounded-lg border-2 transition-all text-left ${
                     config.wheelType === wheel.name
                       ? "border-primary bg-primary/10"
@@ -350,7 +358,9 @@ export default function BikeBuilder({ onClose }: BikeBuilderProps) {
               {BRAKE_TYPES.map((brake) => (
                 <button
                   key={brake.name}
-                  onClick={() => setConfig({ ...config, brakeType: brake.name })}
+                  onClick={() =>
+                    setConfig({ ...config, brakeType: brake.name })
+                  }
                   className={`w-full p-3 rounded-lg border-2 transition-all text-left ${
                     config.brakeType === brake.name
                       ? "border-primary bg-primary/10"
