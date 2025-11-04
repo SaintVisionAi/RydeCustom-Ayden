@@ -13,6 +13,8 @@ import Products from "./pages/Products";
 import Design from "./pages/Design";
 import Shop from "./pages/Shop";
 import About from "./pages/About";
+import BikeBuilderPage from "./pages/BikeBuilderPage";
+import SaintDirector from "./components/SaintDirector";
 import { logIntegrationStatus } from "./lib/integrations";
 
 const queryClient = new QueryClient();
@@ -40,9 +42,11 @@ export const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/customizer" element={<StickerCustomizer />} />
           <Route path="/customize-sticker" element={<StickerCustomizer />} />
+          <Route path="/bike-builder" element={<BikeBuilderPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <SaintDirector />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
