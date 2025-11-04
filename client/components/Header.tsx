@@ -117,12 +117,22 @@ export default function Header() {
                   {item.label}
                 </a>
               ))}
-              <a
-                href="/shop"
-                className="btn-primary w-full text-center py-3 mt-2 font-bold"
-              >
-                Shop Now
-              </a>
+              <div className="flex gap-3 mt-2">
+                <a
+                  href="/bike-builder"
+                  className="btn-primary flex-1 text-center py-3 font-bold"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Build Bike
+                </a>
+                <a
+                  href="/shop"
+                  className="btn-outline border-primary text-primary flex-1 text-center py-3 font-bold"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Shop
+                </a>
+              </div>
             </nav>
           )}
         </div>
