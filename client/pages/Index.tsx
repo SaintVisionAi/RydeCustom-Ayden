@@ -111,16 +111,16 @@ export default function Index() {
 
               <div className="flex flex-col sm:flex-row gap-4 animate-slide-up animation-delay-200">
                 <a
-                  href="/shop"
+                  href="/bike-builder"
                   className="btn-primary px-8 py-4 text-lg font-bold"
                 >
-                  Shop Now <ArrowRight className="w-5 h-5 ml-2" />
+                  Build Your Bike <ArrowRight className="w-5 h-5 ml-2" />
                 </a>
                 <a
-                  href="#video"
+                  href="/shop"
                   className="btn-outline border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-bold"
                 >
-                  Watch Video
+                  Browse Parts
                 </a>
               </div>
 
