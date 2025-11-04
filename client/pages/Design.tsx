@@ -217,10 +217,10 @@ export default function Design() {
                   designs, and answer any questions about custom bike parts.
                 </p>
                 <a
-                  href="/customizer"
+                  href="/bike-builder"
                   className="inline-flex items-center gap-2 btn-primary px-8 py-4 text-lg font-bold"
                 >
-                  Chat with RYDE AI <ArrowRight className="w-5 h-5" />
+                  Build Your Custom Bike <ArrowRight className="w-5 h-5" />
                 </a>
               </div>
             </div>
